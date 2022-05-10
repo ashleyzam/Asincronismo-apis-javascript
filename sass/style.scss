@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Verdana', sans-serif;
+  // background-color: rgb(240, 240, 240);
+}
+$orange--color: #ffa43a;
+$white--color: white;
+@mixin d-flex($direction: row, $aligncontent: center, $alignitems: center) {
+  display: flex;
+  justify-content: $aligncontent;
+  flex-direction: $direction;
+  align-items: $alignitems;
+}
+.header--content {
+  background-color: black;
+  @include d-flex(
+    $direction: row,
+    $aligncontent: space-between,
+    $alignitems: center
+  );
+  .logo--image {
+    width: 140px;
+    height: 140px;
+  }
+  .nav--bar {
+    @include d-flex(
+      $direction: row,
+      $aligncontent: flex-end,
+      $alignitems: center
+    );
+  }
+  .links-nav__bar {
+    color: $white--color;
+    padding: 5px;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 10px;
+    margin-right: 15px;
+    text-decoration: none;
+    outline: none;
+    border-bottom: transparent 1px solid;
+  }
+  .links-nav__bar:hover {
+    border-bottom: #fff 1px solid;
+  }
+}
+
+.search--form__section {
+  height: 180px;
+  border: 1px solid black;
+  margin: 15px 0;
+  @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+  .select--options {
+    padding: 5px 90px;
+    margin: 0 10px;
+  }
+  .search {
+    background-color: #88ef87;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #98ff96;
+    cursor: pointer;
+  }
+  .search:hover{
+      background-color: #a9ffa5;
+  }
+  .clear {
+    background-color: #40cfff;
+    padding: 5px 14px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #40cfff;
+    cursor: pointer;
+  }
+  .clear:hover{
+    background-color: #94e7ff;
+  }
+}
+
+#container__cards{
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 4em;
+  @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+  .card-body{
+    @include d-flex($direction: column, $aligncontent: center, $alignitems: center);
+    border: 1px solid black;
+    margin: 5px;
+    width: 40%;
+    height: 250px;
+    // padding: 4.3em 1em;
+    // display: block;
+    text-align: center;
+  }
+
+  .card-text{
+    font-size: 1em;
+  }
+  .badge{
+    @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+
+  }
+  .badge_category{
+    background-color: #759eff;
+    color: white;
+    padding: 0.1em 0.5em;
+    margin: 5px 5px;
+  }
+  .badge_seniority{
+    background-color: #40cfff;
+    color: white;
+    padding: 0.1em 0.5em;
+    margin: 5px 5px;
+
+  }
+  .d-flex__buttons{
+
+    @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+    
+   .edit__btn{
+     background-color: #009929;
+     border-radius: 8px;
+     margin: 5px;
+     padding: 8px 30px;
+     border: 1px transparent;
+     color: $white--color;
+     cursor: pointer;
+     outline: none;
+     font-size: 1em;
+   } 
+   .delete__btn{
+    border-radius: 8px;
+    margin: 5px; 
+    padding: 8px 20px;
+    background-color: red;
+    border: 1px transparent;
+    color: $white--color;
+    cursor: pointer;
+    outline: none;
+    font-size: 1em;
+
+
+
+   }
+  }
+  .btn{
+    margin-top: 1em;
+    border-radius: 0.5em;
+    background-color: $orange--color;
+    display: block;
+    color: white;
+    font-size: 1em;
+    // margin-left: 37%;
+    padding: 0.4em 2em;
+    cursor: pointer;
+    border: 0.1px solid white;
+  }
+  .btn:hover{
+    background-color:  #ffbf75;
+  }
+  
+}
+.secondary-card-body{
+  border: 1px solid black;
+  width: 50%;
+  height: 400px;
+  padding: 1em 0em;
+  text-align: center;
+  @include d-flex($direction: column, $aligncontent: center, $alignitems: center);
+
+}
+
+
+.container__footer{
+  background-color: black;
+  padding: 5em;
+  color: white;
+  text-align: center;
+}
