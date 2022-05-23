@@ -5,35 +5,44 @@
 }
 
 body{
-  font-family: 'Verdana', sans-serif;
-  background-color: #fcfcfc;
+  color: white;
+  font-family: 'Acme', sans-serif;
+  // font-family: "Lato";
+  font-weight: light;
+  background: linear-gradient(150deg, #e6d3f9 0%, #e6d3f9 50%, #cea0f1 50%, #cea0f1 210%);
+  
 }
+$module-font-size: 14px;
+$bezier: cubic-bezier(.25,.8,.25,1);
 $orange--color: #ffa43a;
 $white--color: white;
-@mixin d-flex($direction: row, $aligncontent: center, $alignitems: center) {
+$flex-wrap: wrap;
+
+@mixin material-shadow() {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+}
+@mixin d-flex($direction: row, $justifycontent: center, $alignitems: center) {
   display: flex;
-  justify-content: $aligncontent;
+  justify-content: $justifycontent;
   flex-direction: $direction;
   align-items: $alignitems;
 }
 .header--content {
+  padding: 2.2em 0;
   background-color: black;
   @include d-flex(
-    $direction: row,
-    $aligncontent: space-between,
+    $direction: column,
+    $justifycontent: flex-start,
     $alignitems: center
   );
-  .logo--image {
-    width: 10%;
-  }
+
   .nav--bar {
-    @include d-flex(
-      $direction: row,
-      $aligncontent: flex-end,
-      $alignitems: center
-    );
+    text-align: center;
   }
+
   .links-nav__bar {
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif;
     color: $white--color;
     padding: 5px;
     font-size: 1em;
@@ -47,17 +56,28 @@ $white--color: white;
   .links-nav__bar:hover {
     border-bottom: #fff 1px solid;
   }
+
 }
 
 .search--form__section {
   height: 180px;
   margin: 15px 0;
-  @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
   .select--options {
     padding: 5px 10px;
     margin: 0 5px;
   }
+  select{
+    background-color: #3d0b60;;
+    color: $white--color;
+    font-family: 'Acme', sans-serif;
+  }
+  select:hover{
+    background-color:  #7e33b7;
+  }
+
   .search {
+    color: $white--color;
     background-color: #88ef87;
     padding: 5px 10px;
     outline: none;
@@ -69,6 +89,7 @@ $white--color: white;
       background-color: #a9ffa5;
   }
   .clear {
+    color: $white--color;
     background-color: #40cfff;
     padding: 5px 14px;
     outline: none;
@@ -82,54 +103,65 @@ $white--color: white;
 }
 
 #container__cards{
-
-  flex-wrap: wrap;
+  flex-wrap: $flex-wrap;
   // width: 100%;
+  min-height: 400px;
   padding-bottom: 4em;
-  @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
   .card-body{
-    @include d-flex($direction: column, $aligncontent: center, $alignitems: center);
+    @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
+    @include material-shadow();
+    background: linear-gradient(to right bottom,#cea0f1, #e6d3f9 );
+    border-radius: 20px;
     max-width: 600px;
     min-width: 330px;
-    border: 1px solid #c5c5c5;
-    background-color: $white--color;
-    margin: 0.7em;
-    width: 30%;
+    width: 20%;
     height: 350px;
     text-align: center;
-  }
+    margin: 10px;
+    flex: 0 0 auto;
+    overflow: hidden;
+    transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
+    z-index: 1000;
 
+
+  }
+  .card-body:hover{
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+  }
+  // .card-title{
+  //   font-size: 1.3em;
+  // }
+  .card-title{
+    color: #1b003a;
+    text-transform: uppercase;
+  }
   .card-text{
     font-size: 1em;
   }
   .badge{
     width: 100%;
-    margin-top: 15px;
-    @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+    flex-wrap: $flex-wrap;
+    // margin-top: 15px;
+    @include d-flex($direction: row-reverse, $justifycontent: center, $alignitems: center);
 
   }
-  .badge_category{
-    background-color: #759eff;
+  .badge_attribute{
+    background-color: #3d0b60;
     color: white;
-    padding: 0.1em 0.5em;
-    margin: 0px 5px;
-    font-size: 0.9em;
+    padding: 0.1em 1em;
+    margin: 7px 5px;
+    font-size: 1.2rem;
   }
-  .badge_seniority{
-    background-color: #40cfff;
-    color: white;
-    padding: 0.1em 0.5em;
-    margin: 0px 5px;
-    font-size: 0.9em;
 
-  }
+
   .d-flex__buttons{
 
-    @include d-flex($direction: row, $aligncontent: center, $alignitems: center);
+    @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
     
    .edit__btn{
-     background-color: #009929;
-     border-radius: 8px;
+    background-color: #7e33b7;
+     border-radius: 0.5em;
      margin: 5px;
      padding: 8px 30px;
      border: 1px transparent;
@@ -138,8 +170,11 @@ $white--color: white;
      outline: none;
      font-size: 1em;
    } 
+    .edit__btn:hover{
+    background-color:  #a167c9;
+  }
    .delete__btn{
-    border-radius: 8px;
+    border-radius: 0.5em;
     margin: 5px; 
     padding: 8px 20px;
     background-color: red;
@@ -149,14 +184,13 @@ $white--color: white;
     outline: none;
     font-size: 1em;
 
-
-
    }
   }
   .btn{
     margin-top: 1em;
     border-radius: 0.5em;
-    background-color: $orange--color;
+    // background-color: #1b003a;
+    background-color: #7e33b7;
     display: block;
     color: white;
     font-size: 1em;
@@ -166,39 +200,73 @@ $white--color: white;
     border: 0.1px solid white;
   }
   .btn:hover{
-    background-color:  #ffbf75;
+    background-color:  #a167c9;
   }
   
 }
 .secondary-card-body{
   border: 1px solid #c5c5c5;
-  background-color: $white--color;
-  width: 50%;
+  // background-color: $white--color;
+  border-radius: 20px;
+  color: black;
+  width: 30%;
   max-width: 600px;
-  height: 400px;
+  min-width: 330px;
+  height: 350px;
   padding: 1em 1em;
   text-align: center;
-  @include d-flex($direction: column, $aligncontent: center, $alignitems: center);
-
+  flex: 0 0 auto;
+  overflow: hidden;
+  transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
+  z-index: 1000;
+  // @include d-flex($direction: column, $aligncontent: space-evenly, $alignitems: center);
+  @include material-shadow();
+  background: linear-gradient(to right bottom,#cea0f1, #e6d3f9 );
+  @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
 }
+.secondary-card-body:hover{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+}
+
+  .goback_btn{
+    padding: 1em 1em;
+    background-color: #759eff;
+    border: none;
+    margin: 5px;
+    margin-top: 350px;
+    border-radius: 0.4em;
+  }
+  a{
+    text-decoration: none;
+    color: $white--color;
+  }
+
 .d-none{
   display: none;
 }
 .flex__form{
   // display: none;
-  height: 500px;
+  height: 600px;
   #form__styles{
-    @include d-flex($direction: column, $aligncontent: center, $alignitems: center);
+    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
   }
   label{
     margin: 0.3em;
     font-weight: bolder;
+    font-size: 1.5em;
   }
   .form__input{
     width: 50%;
     margin: 0.5em;
     padding: 0.5em 0;
     font-size: 1em;
+  }
+  select{
+    width: 50%;
+    margin: 0.7em;
+    padding: 0.5em 0;
+    font-size: 1em;
+
   }
   .edit__btnform{
     background-color: #009929;
@@ -216,7 +284,7 @@ $white--color: white;
 .dot-spinner {
   --uib-size: 40px;
   --uib-speed: .9s;
-  --uib-color: black;
+  --uib-color: white;
 
   position: relative;
   display: flex;
@@ -323,8 +391,32 @@ $white--color: white;
 }
 
 .container__footer{
+  @include d-flex($direction: row, $justifycontent: space-between, $alignitems: center);
   background-color: black;
-  padding: 5em;
+  padding: 1em 2em;
   color: white;
+  position: relative;
+  left:0px;
+  bottom:0px;
+  width:100%;
   text-align: center;
+  .logo--image {
+    width: 110px;
+  }
+  .links-nav__bar {
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif;
+    color: $white--color;
+    padding: 5px;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 10px;
+    margin-right: 15px;
+    text-decoration: none;
+    outline: none;
+    border-bottom: transparent 1px solid;
+  }
+  .links-nav__bar:hover {
+    border-bottom: #fff 1px solid;
+  }
 }
