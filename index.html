@@ -5,17 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <header class="header--content">
-      <img
-        src="images/giflogojobs.gif"
-        alt="jobs-logo-canva-page"
-        class="logo--image"
-      />
+    <header class="header--content" id="principal">
+
       <nav class="nav--bar">
-        <a href="" class="links-nav__bar">Home</a>
-        <a href="" class="links-nav__bar">Contact us</a>
+        <a href="" class="links-nav__bar">  <i class="fas fa-home"></i>  Home</a>
+        <a href="" class="links-nav__bar" id="create-job"><i class='fas fa-edit'></i> Create Job</a>
       </nav>
     </header>
 
@@ -24,7 +25,7 @@
             <select name="" id="locations" class="select--options " >
               <option selected" >Locations</option>
               <option class="selected__options" value="Argentina">Argentina</option>
-              <option class="selected__options" value="United States">United States</option>
+              <option class="selected__options" value="USA">USA</option>
               <option class="selected__options" value="Brasil">Brasil</option>
               <option class="selected__options" value="Rusia">Rusia</option>
               <option class="selected__options" value="Italy">Italy</option>
@@ -44,11 +45,11 @@
           </select>
             <select name="" id="category" class="select--options categories">
               <option value="Category">Categories</option>
-              <option value="High Executive">High Executive</option>
-              <option value="Web Development">Web Development</option>
+              <option value="Executive">Executive</option>
+              <option value="Development">Development</option>
               <option value="QA tester">QA tester</option>
               <option value="Management">Plan Project Manager</option>
-              <option value="Coordination of development teams">Coordination of development teams</option>
+              <option value="Coordination">Coordination</option>
               <option value="Client Representation">Client Representation</option>
               <option value="Development">Mobile</option>
               <option value="Integration">Integration of software development</option>
@@ -70,8 +71,9 @@
 <label for="tags">Tags</label>
 <input class="form__input" type="text" name="text" placeholder="Location" id="location">
 <input class="form__input" type="text" name="text" placeholder="Category" id="work">
-<input class="form__input" type="text" name="text" placeholder="Seniority" id="seniority">
+<input class="form__input" type="text" name="text" placeholder="Seniority" id="seniority_v">
 <button class="edit__btnform" type="submit" id="submit">Edit</button>
+<button class="save__btnform d-none" type="submit" id="save">Save</button>
 </form>
 </div>
 </section>
@@ -82,7 +84,18 @@
   </div>
   
 
-<footer class="container__footer">Jobs page created by Ashley</footer>
+<footer class="container__footer">
+
+  <img
+  src="images/giflogojobs.gif"
+  alt="jobs-logo-canva-page"
+  class="logo--image"
+/>
+<a href="#principal" class="links-nav__bar">  <i class="fas fa-home"></i>  Home</a>
+  Jobs page created by Ashley
+
+
+</footer>
 <script src="js/script.js"></script>
 
   </body>
