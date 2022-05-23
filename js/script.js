@@ -21,17 +21,15 @@ const filterData = (loc, sen, cat) => {
 };
 queryId("search_btn").addEventListener("click", (e) => {
   e.preventDefault();
-  setSpinner();
   queryId("form").classList.add("d-none");
-  setTimeout(() => {
-    cleanData();
+    // cleanData();
     queryId("container__cards").style.minHeight = "250px";
     filterData(
       queryId("locations").value,
       queryId("seniority").value,
       queryId("category").value
     );
-  }, 700);
+
 });
 
 const receiveData = () => {
