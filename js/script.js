@@ -13,26 +13,10 @@ const receiveData = () => {
 };
 receiveData();
 
-const setSpinner = () => {
-  queryId("container__cards").innerHTML = `
-  <div class="dot-spinner">
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-  <div class="dot-spinner__dot"></div>
-</div>`;
-};
-
-const cleanData = () => {
-  queryId("container__cards").innerHTML = "";
-};
 
 const displayData = (data) => {
   setSpinner();
+  queryId("container__cards").style.minHeight = "350px";
   setTimeout(() => {
     cleanData();
     for (const { name, location, category, seniority, id } of data) {
@@ -52,20 +36,6 @@ const displayData = (data) => {
     }
   }, 700);
 };
- const containerError = () =>{
-   return (
-     queryId("locations").value == "Location"&& 
-     queryId("seniority").value == "senioritY" &&
-     queryId("category").value == "Category"
-  )
-  
- }
-const error404 = () =>{
-  const msg = "oops something went wrong. PAGE NOT FOUND 404"
-  errorMessage(msg)
-}
-
-
 const cardDetail = (id) => {
   queryId("container__cards").style.minHeight = "600px";
   queryId("container__cards").style.flexDirection= "column"
@@ -109,16 +79,13 @@ const renderCards = ({
    </div>
    <div class="goback">
    <button class="goback_btn">
-   <a href="index.html"><span>&larr;</span> Go back </a>
+   <a href="landing.html"><span>&larr;</span> Go back </a>
    </button>
    </div>
      `;
   }, 700);
 };
 const filterData = (loc, sen, cat) => {
-  console.log(loc);
-  console.log(sen);
-  console.log(cat);
   fetch(`${URL_BASE}jobs`)
     .then((res) => res.json())
     .then((data) => {
@@ -134,6 +101,8 @@ const filterData = (loc, sen, cat) => {
 queryId("search_btn").addEventListener("click", (e) => {
   e.preventDefault();
    if(containerError()){
+    queryId("container__cards").style.maxHeight = "800px";
+    queryId("container__cards").style.paddingBottom = "250px";
     const msg =  "oops something went wrong. please choose an option to continue your search"
     errorMessage(msg)
    }
@@ -174,12 +143,13 @@ const saveData = () => {
 };
 queryId("create-job").addEventListener("click", (e) => {
   e.preventDefault();
+  setSpinner()
   cleanForm()
   queryId("form_display").classList.add("d-none");
-  queryId("container__cards").style.marginTop = "0px"
-  queryId("container__cards").style.padding ="0px"
-  queryId("background__image").classList.add("d-none")
-  setSpinner();
+  queryId("container__cards").style.minHeight = "500px";
+  queryId("container__cards").style.maxHeight = "500px";
+  queryId("container__cards").style.paddingBottom = "150px";
+  queryId("container__cards").style.margin = "0px";
   setTimeout(() => {
     cleanData();
     queryId("container__cards").style.minHeight = "100px";
@@ -256,9 +226,10 @@ queryId("work").value = "Category";
 queryId("seniority_v").value = "Seniority";
 }
 
-
+const cleanData = () => {
+  queryId("container__cards").innerHTML = "";
+};
 const validateFields = (data) => {
-  console.log(data);
   return (
     data.name == "" ||
     data.description == "" ||
@@ -266,6 +237,19 @@ const validateFields = (data) => {
     data.category == "Category" ||
     data.seniority == "Seniority"
   );
+};
+const setSpinner = () => {
+  queryId("container__cards").innerHTML = `
+  <div class="dot-spinner">
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+  <div class="dot-spinner__dot"></div>
+</div>`;
 };
 
 const errorMessage = (text) =>{
@@ -275,6 +259,20 @@ const errorMessage = (text) =>{
  
   `
 }
+const containerError = () =>{
+  return (
+    queryId("locations").value == "Location"&& 
+    queryId("seniority").value == "senioritY" &&
+    queryId("category").value == "Category"
+ )
+ 
+}
+const error404 = () =>{
+ const msg = "oops something went wrong. PAGE NOT FOUND 404"
+ errorMessage(msg)
+}
+
+
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" || e.key === "Scape") {
     queryId("modal_size").classList.add("d-none");
