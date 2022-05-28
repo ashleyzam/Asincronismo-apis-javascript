@@ -1,0 +1,13 @@
+@mixin material-shadow() {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+  }
+  
+  @mixin d-flex($direction: row, $justifycontent: center, $alignitems: center) {
+    display: flex;
+    justify-content: $justifycontent;
+    flex-direction: $direction;
+    align-items: $alignitems;
+  }
+  // #container_blur{
+  //   
+  // }

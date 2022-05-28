@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: white;
+    font-family: 'Acme', sans-serif;
+    font-weight: light;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/689/20/945/web-development-minimalism-wallpaper-preview.jpg");
+    background-size: cover;
+    // background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    // background-position: center center;
+  
+  }
+  .set_blur {
+    filter: blur(10px);
+  }
+
+  @media only screen and (max-width: 700px) {
+    body{
+      // @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+      background-position: center center;
+      height: 500px;
+      
+    }
+  }
+  
+  
+  @media only screen and (max-width: 374px) {
+    body{
+      // @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+      height: 800px;
+      background-position: center center;
+      
+    }
+  }
+  @media only screen and (max-width: 250px) {
+    body{
+      // @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+      height: 300px;
+      background-position: center center;
+      
+    }
+  }

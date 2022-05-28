@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TP Asincronismo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <section id="blur__principal">
+  <header class="header--content" id="principal">
+
+    <nav class="nav--bar">
+      <a href="index.html" class="links-nav__bar"> <i class="fas fa-home"></i> Home</a>
+      <a href="" class="links-nav__bar" id="create-job"><i class='fas fa-edit'></i> Create Job</a>
+    </nav>
+  </header>
+  <section class="background-image" id="background__image">
+  <div class="search--form__section" id="form_display">
+    <form action="" class="searching--form">
+      <h1 style="text-align: center; color:white;"> FIND YOUR DREAM JOB </h1>
+      <select name="" id="locations" class="select--options " >
+        <option value="Location" selected>Locations</option>
+        <option class="selected__options" value="Argentina">Argentina</option>
+        <option class="selected__options" value="USA">USA</option>
+        <option class="selected__options" value="Brasil">Brasil</option>
+        <option class="selected__options" value="Rusia">Rusia</option>
+        <option class="selected__options" value="Italy">Italy</option>
+        <option class="selected__options" value="France">France</option>
+        <option class="selected__options" value="Australia">Australia</option>
+        <option class="selected__options" value="UK">UK</option>
+        <option class="selected__options" value="Colombia">Colombia</option>
+        <option class="selected__options" value="Noruega">Noruega</option>
+      </select>
+      <select name="" id="seniority" class="select--options">
+        <option value="senioritY" selected>Seniority</option>
+        <option value="Senior">Senior</option>
+        <option value="Semi Senior">Semi Senior</option>
+        <option value="Junior">Junior</option>
+        <option value="Junior Advanced">Junior Advanced</option>
+        <option value="Trainee">Trainee</option>
+      </select>
+      <select name="" id="category" class="select--options categories">
+        <option value="Category" selected>Categories</option>
+        <option value="Executive">Executive</option>
+        <option value="Development">Development</option>
+        <option value="QA tester">QA tester</option>
+        <option value="Management">Plan Project Manager</option>
+        <option value="Coordination">Coordination</option>
+        <option value="Client Representation">Client Representation</option>
+        <option value="Development">Mobile</option>
+        <option value="Integration">Integration of software development</option>
+      </select>
+      <div class="form__buttons">
+        <button class="search" id="search_btn">Search</button>
+        <button class="clear">Clear</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+
+
+  <p class="set_blur d-none"></p>
+
+
+
+  <section id="container__cards">
+
+  </section>
+  <section id="form" class="d-none">
+    <div class="flex__form">
+      <form id="form__styles" action="">
+        <label for="title">Job Title</label>
+        <input class="form__input" type="text" name="text" placeholder="Describe your Job title here" id="title">
+        <label for="description">Description</label>
+        <input class="form__input" type="text" name="text" placeholder="Describe the job" id="description">
+        <label for="tags">Tags</label>
+        <select class="form__input" type="text" name="text" placeholder="Location" id="location">
+          <option value="Locations" selected>Locations</option>
+          <option class="selected__options" value="Argentina">Argentina</option>
+          <option class="selected__options" value="USA">USA</option>
+          <option class="selected__options" value="Brasil">Brasil</option>
+          <option class="selected__options" value="Rusia">Rusia</option>
+          <option class="selected__options" value="Italy">Italy</option>
+          <option class="selected__options" value="France">France</option>
+          <option class="selected__options" value="Australia">Australia</option>
+          <option class="selected__options" value="UK">UK</option>
+          <option class="selected__options" value="Colombia">Colombia</option>
+          <option class="selected__options" value="Noruega">Noruega</option>
+
+        </select>
+        <select class="form__input" type="text" name="text" placeholder="Seniority" id="seniority_v">
+          <option value="Seniority" selected>Seniority</option>
+          <option value="Senior">Senior</option>
+          <option value="Semi Senior">Semi Senior</option>
+          <option value="Junior">Junior</option>
+          <option value="Junior Advanced">Junior Advanced</option>
+          <option value="Trainee">Trainee</option>
+        </select>
+        <select class="form__input" type="text" name="text" placeholder="Category" id="work">
+          <option value="Category" selected>Categories</option>
+          <option value="Executive">Executive</option>
+          <option value="Development">Development</option>
+          <option value="QA tester">QA tester</option>
+          <option value="Management">Plan Project Manager</option>
+          <option value="Coordination">Coordination</option>
+          <option value="Client Representation">Client Representation</option>
+          <option value="Development">Mobile</option>
+          <option value="Integration">Integration of software development</option>
+        </select>
+        <button class="edit__btnform" type="submit" id="submit">Edit</button>
+        <button class="save__btnform d-none" type="submit" id="save">Save</button>
+        <button class="btn__cancel">Cancelar</button>
+      </form>
+    </div>
+  </section>
+
+
+  <footer class="container__footer">
+
+    <img src="images/giflogojobs.gif" alt="jobs-logo-canva-page" class="logo--image" />
+    <a href="#principal" class="links-nav__bar"> <i class="fas fa-home"></i> Home</a>
+    Jobs page created by Ashley
+</section>
+
+<div id="modal_size" class="d-none ">
+    
+  <div class="delete_modal_position" id="close_modal">
+  <div  id="modal_delete" class="modal_delete_styles">
+    <i class='fas fa-angle-down fa-1x' id="close__modal"></i>
+  <p class="modal-text" id="modal_text">ARE YOU SURE ?</p>
+  <button class="btn__danger" id="btn-danger">Delete</button>
+</div>
+</div>
+</div>
+  </footer>
+  <script src="js/script.js"></script>
+
+  <!-- <img src="images/md.jpg" alt="managing-director"> -->
+
+</body>
+
+</html>

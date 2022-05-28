@@ -2,35 +2,8 @@ const URL_BASE = "https://627412da345e1821b2271d7d.mockapi.io/";
 const queryId = (id) => document.getElementById(id);
 let editId = 0;
 let deleteId = 0;
+let isId = 0;
 
-const filterData = (loc, sen, cat) => {
-  console.log(loc);
-  console.log(sen);
-  console.log(cat);
-  fetch(`${URL_BASE}jobs`)
-    .then((res) => res.json())
-    .then((data) => {
-      displayData(
-        data.filter(
-          ({ location, seniority, category }) =>
-            location == loc || seniority == sen || category == cat
-        )
-      );
-    })
-    .catch((err) => console.log(err));
-};
-queryId("search_btn").addEventListener("click", (e) => {
-  e.preventDefault();
-  queryId("form").classList.add("d-none");
-    // cleanData();
-    queryId("container__cards").style.minHeight = "250px";
-    filterData(
-      queryId("locations").value,
-      queryId("seniority").value,
-      queryId("category").value
-    );
-
-});
 
 const receiveData = () => {
   fetch(`${URL_BASE}jobs`)
@@ -40,14 +13,6 @@ const receiveData = () => {
 };
 receiveData();
 
-const cardDetail = (id) => {
-  fetch(`${URL_BASE}jobs`)
-    .then((res) => res.json())
-    .then((data) => {
-      const cards = data.find((card) => card.id == id);
-      renderCards(cards);
-    });
-};
 const setSpinner = () => {
   queryId("container__cards").innerHTML = `
   <div class="dot-spinner">
@@ -70,8 +35,9 @@ const displayData = (data) => {
   setSpinner();
   setTimeout(() => {
     cleanData();
-    for (const { name,location ,category, seniority, id } of data) {
+    for (const { name, location, category, seniority, id } of data) {
       queryId("container__cards").innerHTML += `
+      
         <img src="" class="card-img-top" alt="">
         <div class="card-body">
             <h3 class="card-title">${name}</h3>
@@ -86,7 +52,35 @@ const displayData = (data) => {
     }
   }, 700);
 };
+ const containerError = () =>{
+   return (
+     queryId("locations").value == "Location"&& 
+     queryId("seniority").value == "senioritY" &&
+     queryId("category").value == "Category"
+  )
+  
+ }
+const error404 = () =>{
+  const msg = "oops something went wrong. PAGE NOT FOUND 404"
+  errorMessage(msg)
+}
 
+
+const cardDetail = (id) => {
+  queryId("container__cards").style.minHeight = "600px";
+  queryId("container__cards").style.flexDirection= "column"
+  queryId("container__cards").style.marginTop = "0px"
+  queryId("container__cards").style.padding ="0px"
+  queryId("background__image").classList.add("d-none")
+  cleanData();
+  queryId("form_display").classList.add("d-none");
+  fetch(`${URL_BASE}jobs`)
+    .then((res) => res.json())
+    .then((data) => {
+      const cards = data.find((card) => card.id == id);
+      renderCards(cards);
+    });
+};
 const renderCards = ({
   name,
   description,
@@ -98,14 +92,15 @@ const renderCards = ({
   setSpinner();
   setTimeout(() => {
     cleanData();
+
     queryId("container__cards").innerHTML = `
      <div class="secondary-card-body">
-     <h3 class="card-title">${name}</h3>
-     <p class="card-text">${description}</p>
-     <p class="card-text badge_category">${location}</p>
+     <h3 class="card-title title_card">${name}</h3>
+     <p class="card-text ">${description}</p>
      <div class="badge">
-     <span class="badge_category">${category}</span>
-     <span class="badge_seniority">${seniority}</span>
+     <p class="card-text badge_attribute">${location}</p>
+     <span class="badge_attribute">${category}</span>
+     <span class="badge_attribute">${seniority}</span>
      </div>
      <div class="d-flex__buttons">
      <button class="edit__btn" onclick="showForm(${id})">Edit</button>
@@ -120,24 +115,53 @@ const renderCards = ({
      `;
   }, 700);
 };
+const filterData = (loc, sen, cat) => {
+  console.log(loc);
+  console.log(sen);
+  console.log(cat);
+  fetch(`${URL_BASE}jobs`)
+    .then((res) => res.json())
+    .then((data) => {
+      displayData(
+        data.filter(
+          ({ location, seniority, category }) =>
+            location == loc || seniority == sen || category == cat
+        )
+      );
+    })
+    .catch((err) => error404(err));
+};
+queryId("search_btn").addEventListener("click", (e) => {
+  e.preventDefault();
+   if(containerError()){
+    const msg =  "oops something went wrong. please choose an option to continue your search"
+    errorMessage(msg)
+   }
+   else{
+  queryId("form").classList.add("d-none");
+  cleanData();
+  queryId("container__cards").style.minHeight = "250px";
+  filterData(
+    queryId("locations").value,
+    queryId("seniority").value,
+    queryId("category").value
+  );
+ }
+});
 
 const modalDeleteData = (id) => {
-  console.log(id);
-  queryId("modal_delete").classList.remove("d-none");
+  queryId("blur__principal").classList.add("set_blur");
+  queryId("modal_size").classList.remove("d-none");
   deleteId = id;
 };
 queryId("btn-danger").addEventListener("click", (e) => {
   e.preventDefault();
   fetch(`${URL_BASE}jobs/${deleteId}`, {
     method: "DELETE",
-  }).finally(() => location.reload());
+  })
+    .catch((err) => console.log(err))
+    .finally(() => location.reload());
 });
-
-const showForm = (id) => {
-  console.log(id);
-  queryId("form").classList.remove("d-none");
-  editId = id;
-};
 
 const saveData = () => {
   return {
@@ -150,10 +174,15 @@ const saveData = () => {
 };
 queryId("create-job").addEventListener("click", (e) => {
   e.preventDefault();
+  cleanForm()
+  queryId("form_display").classList.add("d-none");
+  queryId("container__cards").style.marginTop = "0px"
+  queryId("container__cards").style.padding ="0px"
+  queryId("background__image").classList.add("d-none")
   setSpinner();
   setTimeout(() => {
     cleanData();
-    queryId("container__cards").style.minHeight = "50px";
+    queryId("container__cards").style.minHeight = "100px";
     queryId("form").classList.remove("d-none");
     queryId("submit").classList.add("d-none");
     queryId("save").classList.remove("d-none");
@@ -163,7 +192,9 @@ queryId("create-job").addEventListener("click", (e) => {
 queryId("save").addEventListener("click", (e) => {
   e.preventDefault();
   if (validateFields(saveData())) {
-    alert("complete los campos");
+    queryId("blur__principal").classList.add("set_blur");
+    queryId("modal_size").classList.remove("d-none");
+    queryId("modal_text").innerHTML = "Por favor, complete los campos.";
   } else {
     fetch(`${URL_BASE}jobs`, {
       method: "POST",
@@ -171,16 +202,19 @@ queryId("save").addEventListener("click", (e) => {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(saveData()),
-    }).finally(() => location.reload());
+    })
+      .catch((err) => error404(err))
+      .finally(() => location.reload());
   }
 });
 
 queryId("submit").addEventListener("click", (e) => {
   e.preventDefault();
-  setSpinner();
-  cleanData();
   if (validateFields(saveData())) {
-    alert("complete los campos");
+    queryId("blur__principal").classList.add("set_blur");
+    queryId("modal_size").classList.remove("d-none");
+    queryId("modal_text").innerHTML = "Por favor, complete los campos.";
+    queryId("btn-danger").classList.add("d-none");
   } else {
     fetch(`${URL_BASE}jobs/${editId}`, {
       method: "PUT",
@@ -188,9 +222,40 @@ queryId("submit").addEventListener("click", (e) => {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(saveData()),
-    }).finally(() => location.reload());
+    })
+      .catch((err) => error404(err))
+      .finally(() => location.reload());
   }
 });
+const showForm = (id) => {
+  getDataById(id);
+  queryId("form").classList.remove("d-none");
+  editId = id;
+};
+
+const getDataById = (id) => {
+  fetch(`${URL_BASE}jobs/${id}`)
+    .then((response) => response.json())
+    .then((data) => recordData(data))
+    .catch((err) => error404(err));
+  };
+const recordData = (data) => {
+    const { name, description, location, category, seniority } = data;
+    queryId("title").value = name;
+    queryId("description").value = description;
+    queryId("location").value = location;
+    queryId("work").value = category;
+    queryId("seniority_v").value = seniority;
+  };
+  
+const cleanForm = () =>{
+queryId("title").value = "";
+queryId("description").value = ""
+queryId("location").value = "Locations";
+queryId("work").value = "Category";
+queryId("seniority_v").value = "Seniority";
+}
+
 
 const validateFields = (data) => {
   console.log(data);
@@ -202,3 +267,30 @@ const validateFields = (data) => {
     data.seniority == "Seniority"
   );
 };
+
+const errorMessage = (text) =>{
+  queryId("container__cards").style.minHeight = "150px"
+  queryId("container__cards").innerHTML = `
+  <p class="err" style="color: white">${text}</p>
+ 
+  `
+}
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" || e.key === "Scape") {
+    queryId("modal_size").classList.add("d-none");
+    queryId("blur__principal").classList.remove("set_blur");
+  }
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === queryId("close_modal") ||e.target === queryId("close__modal")) {
+    queryId("modal_size").classList.add("d-none");
+    queryId("blur__principal").classList.remove("set_blur");
+  }
+});
+window.addEventListener("keydown", (e) =>{
+  if (e.key == "F5" ||(e.ctrlKey && e.key == "F5")){
+    e.preventDefault()
+    window.location = "index.html"
+  }
+})
