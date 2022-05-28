@@ -1,0 +1,50 @@
+#modal_size {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2000;
+  
+    .delete_modal_position {
+  
+      @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2;
+  
+      .modal_delete_styles {
+        background-color: $white--color;
+        @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
+        width: 30%;
+        height: 200px;
+        border: 1px solid $button-color;
+  
+        .fa-angle-down {
+          margin-left: 350px;
+          color: #1b003a;
+          cursor: $cursor;
+        }
+  
+        .btn__danger {
+          border-radius: 10px;
+          padding: 5px $em-size ;
+          background-color: red;
+          border: none;
+          color: $white--color;
+          cursor: $cursor;
+        }
+  
+        .modal-text {
+          color: #1b003a;
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,34 @@
+
+.container__footer {
+    @include d-flex($direction: row, $justifycontent: space-between, $alignitems: center);
+    background-color: black;
+    padding: $em-size 2em;
+    color: white;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+  
+    .logo--image {
+      width: 110px;
+    }
+  
+    .links-nav__bar {
+      text-transform: uppercase;
+      font-family: 'Acme', sans-serif;
+      color: $white--color;
+      padding: 5px;
+      font-size: $em-size;
+      font-weight: bolder;
+      padding: 10px;
+      margin-right: 15px;
+      text-decoration: none;
+      outline: none;
+      border-bottom: transparent 1px solid;
+    }
+  
+    .links-nav__bar:hover {
+      border-bottom: #fff 1px solid;
+    }
+  }

@@ -1,0 +1,62 @@
+
+.container_home{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.container_info{
+    flex-wrap: wrap;
+ @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+    height: 100px;
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.info{
+    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+    max-width: 550px;
+}
+
+.info-text{
+    font-family: 'Acme', sans-serif;
+    text-transform: uppercase;
+    font-size: 7em;
+    display: block;
+}
+.home_body{
+    // background: url('https://www.wallpaperup.com/uploads/wallpapers/2012/12/08/24017/94607145c1e2a7a382a882aa5592835a-700.jpg');
+    background: url('https://i.pinimg.com/564x/70/fd/66/70fd661c552a98cfe353a6c5feb656ff.jpg');
+    background-size: cover;
+    background-position: right center;
+    height: 1500px;
+    min-height: 500px;
+}
+.why-work-with-us{
+    height: 200px;
+}
+.cards__container{
+    flex-wrap: $flex-wrap;
+    @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+    height: 400px;
+}
+.cards{
+    @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
+    width: 20%;
+    background-color: #ffff;
+    min-width: 300px;
+    margin: 10px;
+    padding-bottom: 100px;
+}
+h4{
+    width: 100%;
+    height: 50px;
+    background-color:#5dc1b9;
+    padding: 10px 5px;
+}
+p{
+    color: black;
+    margin: 10px;
+    font-size: 1.2em;
+}
