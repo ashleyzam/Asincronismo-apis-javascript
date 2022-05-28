@@ -20,14 +20,13 @@
     }
   
     select {
-      background-color: #3d0b60;
-      ;
-      color: $white--color;
+      background-color: $white--color;
+      color: black;
       font-family: 'Acme', sans-serif;
     }
   
     select:hover {
-      background-color: #7e33b7;
+      background-color: #9ce0db;
     }
   
     .form__buttons {
