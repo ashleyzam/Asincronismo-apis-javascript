@@ -1,10 +1,20 @@
-
+*{
+    margin: 0;
+    padding: 0;
+}
 .container_home{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+    height: 150px;
+}
+.a{
+    padding: 5px 10px;
+    cursor: $cursor;
+    background-color: #5dc1b9;
+    margin: 5px;
+    border: none;
+}
+.a:hover{
+    background-color: #9ce0db;
 }
 .container_info{
     flex-wrap: wrap;
@@ -34,7 +44,14 @@
     min-height: 500px;
 }
 .why-work-with-us{
-    height: 200px;
+    height: 150px;
+    min-width: 330px;
+   
+}
+h3{
+    font-weight: lighter;
+    font-size: 1.3em;
+    margin: 5px;
 }
 .cards__container{
     flex-wrap: $flex-wrap;
@@ -46,8 +63,10 @@
     width: 20%;
     background-color: #ffff;
     min-width: 300px;
+    max-width: 600px;
     margin: 10px;
     padding-bottom: 100px;
+    min-width: 330px;
 }
 h4{
     width: 100%;
@@ -60,3 +79,19 @@ p{
     margin: 10px;
     font-size: 1.2em;
 }
+
+  
+@media only screen and (max-width: 720px) {
+    .info-text{
+        margin-left: 30px;
+        // font-size: 4em;
+        // display: block;
+    }
+  }
+  @media only screen and (max-width: 520px) {
+    .info-text{
+        margin-left: 10px;
+        font-size: 5em;
+        // display: block;
+    }
+  }
