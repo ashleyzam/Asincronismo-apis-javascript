@@ -1,3 +1,15 @@
+:root {
+  --width-mobile: 375px;
+  --desktop: 1440px;
+  --primary-Soft-blue: hsl(215, 51%, 70%);
+  --primary-Cyan: hsl(178, 100%, 50%);
+  --main-Very-dark-blue: hsl(217, 54%, 11%);
+  --card-Very-dark-blue: hsl(216, 50%, 16%);
+  --line-Very-dark-blue: hsl(215, 32%, 27%);
+  --neutral-White: hsl(0, 0%, 100%);
+  --Font-paragraph-size: 18px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -185,12 +197,6 @@ body {
 }
 
 .search--form__section {
-  background: url("https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom right;
-  height: 200px;
-  min-width: 320px;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
@@ -205,6 +211,7 @@ body {
   background-color: white;
   color: black;
   font-family: "Acme", sans-serif;
+  min-width: 300px;
 }
 .search--form__section select:hover {
   background-color: #9ce0db;
@@ -224,6 +231,7 @@ body {
   border-radius: 10px;
   border: 1px solid #98ff96;
   cursor: pointer;
+  margin: 0 5px;
 }
 .search--form__section .search:hover {
   background-color: #a167c9;
@@ -231,11 +239,12 @@ body {
 .search--form__section .clear {
   color: white;
   background-color: #40cfff;
-  padding: 5px 14px;
+  padding: 5px 10px;
   outline: none;
   border-radius: 10px;
   border: 1px solid #40cfff;
   cursor: pointer;
+  margin: 0 5px;
 }
 .search--form__section .clear:hover {
   background-color: #94e7ff;
@@ -255,7 +264,7 @@ body {
   align-items: center;
 }
 .flex__form label {
-  color: #3d0b60;
+  color: white;
   margin: 0.3em;
   font-weight: bolder;
   font-size: 1.5em;
@@ -284,22 +293,37 @@ body {
   font-size: 1em;
 }
 
-@media only screen and (max-width: 767px) {
-  .background-image {
-    width: 100%;
-  }
+.save__btnform {
+  background-color: #009929;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 30px;
+  border: 1px transparent;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 1em;
+}
 
+.btn__cancel {
+  background-color: red;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 15px;
+  border: 1px transparent;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 520px) {
   .searching--form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-  }
-
-  .search--form__section {
-    background: none;
-    background-color: black;
-    height: 220px;
+    height: 250px;
   }
 }
 #container__cards {
@@ -328,7 +352,7 @@ body {
   max-width: 600px;
   min-width: 330px;
   width: 20%;
-  height: 400px;
+  height: 480px;
   margin: 10px;
   flex: 0 0 auto;
   overflow: hidden;
@@ -344,11 +368,13 @@ body {
   opacity: 1;
   color: white;
   text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .card-text {
   opacity: 1;
-  font-size: 1em;
+  font-size: 1.2em;
+  color: black;
 }
 
 .badge {
@@ -370,14 +396,15 @@ body {
 
 .secondary-card-body {
   opacity: 89%;
-  background-color: white;
   margin-right: 30px;
   border: 1px solid #c5c5c5;
+  background-color: white;
   border-radius: 20px;
   color: black;
   width: 30%;
   max-width: 600px;
   min-width: 330px;
+  min-height: 250px;
   padding: 1em 1em;
   text-align: center;
   flex: 0 0 auto;

@@ -93,12 +93,7 @@
   color: red;
 }
 .search--form__section {
-  background: url("https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position:  bottom right;
-  height: 200px;
-    min-width: 320px;
+    //min-width: 300px;
     flex-wrap: $flex-wrap;
 
     @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
@@ -112,6 +107,7 @@
       background-color: $white--color;
       color: black;
       font-family: 'Acme', sans-serif;
+      min-width: 300px;
     }
   
     select:hover {
@@ -131,6 +127,7 @@
       border-radius: 10px;
       border: 1px solid #98ff96;
       cursor: $cursor;
+      margin: 0 5px;
   
     }
   
@@ -141,11 +138,12 @@
     .clear {
       color: $white--color;
       background-color: #40cfff;
-      padding: 5px 14px;
+      padding: 5px 10px;
       outline: none;
       border-radius: 10px;
       border: 1px solid #40cfff;
       cursor: $cursor;
+      margin: 0 5px;
     }
   
     .clear:hover {
@@ -164,7 +162,7 @@
     }
   
     label {
-      color: #3d0b60;
+      color: $white--color;
       margin: 0.3em;
       font-weight: bolder;
       font-size: 1.5em;
@@ -197,33 +195,32 @@
       font-size: $em-size;
     }
   }
-
-  @media only screen and (max-width: 767px) {
-    .background-image{
-      width: 100%;
-    }
+.save__btnform{
+  background-color: #009929;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 30px;
+  border: 1px transparent;
+  color: $white--color;
+  cursor: $cursor;
+  outline: none;
+  font-size: $em-size;
+}
+.btn__cancel{
+  background-color: red;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 15px;
+  border: 1px transparent;
+  color: $white--color;
+  cursor: $cursor;
+  outline: none;
+  font-size: $em-size;
+}
+  @media only screen and (max-width: 520px) {
     .searching--form{
 
       @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-
-    }
-    .search--form__section{
-      background: none;
-      background-color: black;
-      height: 220px;
-    }
+      height: 250px;
   }
-  // @media only screen and (max-width: 374px) {
-  //   .background-image{
-  //     height: 300px;
-  //     width: 100%;
-  //     background-size: cover;
-  //   }
-  // }
-
-  // @media only screen and (max-width: 374px) {
-  //   .searching--form{
-  //     @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-
-  //   }
-  // }
+}

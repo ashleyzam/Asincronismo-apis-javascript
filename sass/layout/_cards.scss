@@ -1,5 +1,4 @@
 #container__cards {
-
     flex-wrap: $flex-wrap;
     bottom: 0;
     min-height: 800px;
@@ -10,7 +9,6 @@
   }
   
   .card-body {
-    
     background-image: url("https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
     opacity: 92%;
     background-position:  bottom right;
@@ -21,8 +19,7 @@
     max-width: 600px;
     min-width: 330px;
     width: 20%;
-    height: 400px;
-    // text-align: center;
+    height: 480px;
     margin: 10px;
     flex: 0 0 auto;
     overflow: hidden;
@@ -41,11 +38,14 @@
     opacity: 1;
     color: $white--color;
     text-transform: uppercase;
+    font-weight: bolder;
+
   }
   
   .card-text {
     opacity: 1;
-    font-size: $em-size;
+    font-size: 1.2em;
+    color: black;
   }
   
   .badge {

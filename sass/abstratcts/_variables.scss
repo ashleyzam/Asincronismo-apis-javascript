@@ -8,3 +8,16 @@ $bezier: cubic-bezier(.25, .8, .25, 1);
 $orange--color: #ffa43a;
 $white--color: white;
 $flex-wrap: wrap;
+:root {
+    --width-mobile: 375px;
+    --desktop: 1440px;
+
+    --primary-Soft-blue: hsl(215, 51%, 70%);
+    --primary-Cyan: hsl(178, 100%, 50%);
+
+    --main-Very-dark-blue: hsl(217, 54%, 11%);
+    --card-Very-dark-blue: hsl(216, 50%, 16%);
+    --line-Very-dark-blue: hsl(215, 32%, 27%);
+    --neutral-White: hsl(0, 0%, 100%);
+    --Font-paragraph-size: 18px;
+}
