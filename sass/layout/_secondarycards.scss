@@ -10,7 +10,6 @@
     width: 30%;
     max-width: 600px;
     min-width: 330px;
-    height: 350px;
     padding: $em-size $em-size;
     text-align: center;
     flex: 0 0 auto;
@@ -94,4 +93,10 @@
   
   .d-none {
     display: none;
+  }
+  @media only screen and (max-width: 374px) {
+      .secondary-card-body{
+        margin-right: 0;
+      }
+    
   }

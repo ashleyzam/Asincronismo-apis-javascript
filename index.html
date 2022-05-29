@@ -1,53 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Welcome to Jobs page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+
+<head>
+    <title>Welcome to Jobs page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-    </head>
-    <body class="home_body">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e0bc6e18c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="home_body">
 
 
-        <div class="container_home">
-            <h2>Welcome to JOBS page</h2>
-        <button class="a"><a href="landing.html">OK</a></button>
-</div>
-<section class="container_info">
-    <h3>
-        Here you can find your future job in 《 IT 》 according to your professional background</h3>
+    <div class="container_home">
+     <div class="welcome_jobs">   
+        <h2>Welcome to JOBS page</h2>
+        <button class="a" id="btn_log_in">LOG IN</button>
+    </div> 
+        <div class="pop_modal_size d-none" id="open_log">
+            <div class="pop_modal_position">
+                <div class="pop_modal_styles">
+                    <form action="" class="control-form">
+                        <label class="tags_label"><img src="images/user2.png" alt=""> LOGIN</label>
+                        <input class="input_styles" type="email" placeholder="example@example.com" id="input_login">
+                        <label class="tags_label">* PASSWORD</label>
+                        <input class="input_styles" class="form-control" type="password" name="password" id="password"
+                            placeholder="password">
+                        <div class="styles_show_password">
+                            <input  type="checkbox" class="btn-primary" type="password" id="toggle"> 
+                            <label class="passw_styles" for="text">Show</label>
 
-</section>
-<section class="info">
- <h1 class="info-text">
-    why 
-    choose 
-    our 
-    platform?</h1>
+                        </div>
+                        <div class="validation_container" >
+                            <p class="validation_text  d-none" id="text_validation">x please, complete the fields to continue</p>
+                            <p class="text-validation d-none" id="validate">please, enter a valid username</p>
+                        </div>
+                        <div class="buttons_form_login">
+        
+                            <button type="submit" class="loging_btn" id="log_btn">Log In</button>
+                            <button type="button" class="loging_btn" id="cancel_btn">Cancel</button>
+                        </div>
+        
+                    </form>
+        
+                </div>
+            </div>
+        </div>
 
-</section>
-<section class="why-work-with-us">
-    <h3>Simple tools like , quickly filter and prioritize only the most qualified candidates—so you can find the people you want to interview, faster.
+        <section class="container_info">
+            <h3>
+                Here you can find your future job in 《 IT 》 according to your professional background</h3>
 
-    </h3>
-</section>
-<section class="cards__container">
+        </section>
+        <section class="info">
+            <h1 class="info-text">
+                why
+                choose
+                our
+                platform?</h1>
 
-    <div class="cards">
-        <h4>POST A JOB TO REACH THE RIGHT PEOPLE</h4>
-        <p>Create a job post in minutes to tap into a network of over 770 million professionals. Share that you're hiring, to get qualified candidates with the skills and experience you need.</p>
-    </div>
-    <div class="cards">
-        <h4>ADD A JOB DESCRIPTION</h4>
-        <p>You can write the job description, making your ads looks more attractive to your candidates</p>
-    </div>
-    <div class="card">
-        <h4>AND MORE... JUST PRESS HERE AND WATCH OUR NEW JOBS</h4>
-    </div>
-</section>
-    </body>
+        </section>
+        <section class="why-work-with-us">
+            <h3>Simple tools like , quickly filter and prioritize only the most qualified candidates—so you can find the
+                people you want to interview, faster.
+
+            </h3>
+        </section>
+        <section class="cards__container">
+
+            <div class="cards">
+                <h4>POST A JOB TO REACH THE RIGHT PEOPLE</h4>
+                <p>Create a job post in minutes to tap into a network of over 770 million professionals. Share that
+                    you're
+                    hiring, to get qualified candidates with the skills and experience you need.</p>
+            </div>
+            <div class="cards">
+                <h4>ADD A JOB DESCRIPTION</h4>
+                <p>You can write the job description, making your ads looks more attractive to your candidates</p>
+            </div>
+            <div class="card">
+                <h4>AND MORE... JUST PRESS HERE AND WATCH OUR NEW JOBS</h4>
+            </div>
+        </section>
+        <script src="js/scriptevents.js"></script>
+</body>
+
 </html>

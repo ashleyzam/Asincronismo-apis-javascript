@@ -7,11 +7,7 @@
 body {
   color: white;
   font-family: "Acme", sans-serif;
-  font-weight: light;
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/689/20/945/web-development-minimalism-wallpaper-preview.jpg");
-  background-size: cover;
-  background-size: cover;
-  height: 450px;
+  background-color: #c9c9c9;
 }
 
 .set_blur {
@@ -37,10 +33,10 @@ body {
   }
 }
 .header--content {
-  padding: 2.2em 0;
+  padding: 2.2em 1em;
   background-color: black;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
@@ -70,14 +66,136 @@ body {
   background-size: cover;
 }
 
-.search--form__section {
+.welcome_jobs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.control-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pop_modal_size {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+.pop_modal_position {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.pop_modal_styles {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 350px;
+  width: 30%;
+  height: 500px;
+  border: 1px solid #7e33b7;
+}
+
+.tags_label {
+  color: black;
+  margin: 10px 5px;
+  font-size: 1.2em;
+}
+
+.input_styles {
+  margin: 5px 5px;
+  width: 100%;
+  padding: 2px 50px;
+  text-align: center;
+}
+
+.styles_show_password {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.passw_styles {
+  color: black;
+  font-size: 1.2em;
+  margin: 10px 10px;
+}
+
+.buttons_form_login {
+  display: flex;
+}
+
+.loging_btn {
+  margin: 10px 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+#log_btn {
+  background-color: #009929;
+}
+
+.validation_container {
   flex-wrap: wrap;
-  height: 180px;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: flex-end;
+}
+
+.validation_text {
+  font-size: 0.8em;
+  color: red;
+}
+
+.text-validation {
+  font-size: 0.8em;
+  color: red;
+}
+
+.search--form__section {
+  background: url("https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+  height: 200px;
+  min-width: 320px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 .search--form__section .select--options {
   padding: 5px 10px;
@@ -170,20 +288,18 @@ body {
   .background-image {
     width: 100%;
   }
-}
-@media only screen and (max-width: 374px) {
-  .background-image {
-    height: 280px;
-    width: 100%;
-    background-size: cover;
-  }
-}
-@media only screen and (max-width: 374px) {
+
   .searching--form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+
+  .search--form__section {
+    background: none;
+    background-color: black;
+    height: 220px;
   }
 }
 #container__cards {
@@ -212,7 +328,7 @@ body {
   max-width: 600px;
   min-width: 330px;
   width: 20%;
-  height: 480px;
+  height: 400px;
   margin: 10px;
   flex: 0 0 auto;
   overflow: hidden;
@@ -262,7 +378,6 @@ body {
   width: 30%;
   max-width: 600px;
   min-width: 330px;
-  height: 350px;
   padding: 1em 1em;
   text-align: center;
   flex: 0 0 auto;
@@ -348,6 +463,11 @@ a {
   display: none;
 }
 
+@media only screen and (max-width: 374px) {
+  .secondary-card-body {
+    margin-right: 0;
+  }
+}
 .dot-spinner {
   --uib-size: 40px;
   --uib-speed: .9s;
@@ -376,7 +496,7 @@ a {
   height: 20%;
   width: 20%;
   border-radius: 50%;
-  background-color: var(--uib-color);
+  background-color: black;
   transform: scale(0);
   opacity: 0.5;
   animation: pulse calc(var(--uib-speed) * 1.111) ease-in-out infinite;
@@ -532,17 +652,14 @@ a {
   border-bottom: #fff 1px solid;
 }
 
+@media only screen and (max-width: 374px) {
+  .logo--image {
+    display: none;
+  }
+}
 * {
   margin: 0;
   padding: 0;
-}
-
-.container_home {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 150px;
 }
 
 .a {
@@ -563,7 +680,6 @@ a {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100px;
   font-size: 1em;
   text-align: center;
   text-transform: uppercase;
