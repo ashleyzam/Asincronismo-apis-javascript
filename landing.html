@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <section id="blur__principal">
+  <div id="blur__principal">
   <header class="header--content" id="principal">
 
     <nav class="nav--bar">
@@ -26,7 +26,7 @@
   <div class="search--form__section" id="form_display">
     <form action="" class="searching--form">
       <h1 style="text-align: center; color:white;"> FIND YOUR DREAM JOB </h1>
-      <select name="" id="locations" class="select--options " >
+      <select name="selectlocation" id="locations" class="select--options " >
         <option value="Location" selected>Locations</option>
         <option class="selected__options" value="Argentina">Argentina</option>
         <option class="selected__options" value="USA">USA</option>
@@ -39,7 +39,7 @@
         <option class="selected__options" value="Colombia">Colombia</option>
         <option class="selected__options" value="Noruega">Noruega</option>
       </select>
-      <select name="" id="seniority" class="select--options">
+      <select name="seectseniority" id="seniority" class="select--options">
         <option value="senioritY" selected>Seniority</option>
         <option value="Senior">Senior</option>
         <option value="Semi Senior">Semi Senior</option>
@@ -47,7 +47,7 @@
         <option value="Junior Advanced">Junior Advanced</option>
         <option value="Trainee">Trainee</option>
       </select>
-      <select name="" id="category" class="select--options categories">
+      <select name="selectcategory" id="category" class="select--options categories">
         <option value="Category" selected>Categories</option>
         <option value="Executive">Executive</option>
         <option value="Development">Development</option>
@@ -60,7 +60,7 @@
       </select>
       <div class="form__buttons">
         <button class="search" id="search_btn">Search</button>
-        <button class="clear">Clear</button>
+        <button class="clear" id="btn_clear">Clear</button>
       </div>
 
     </form>
@@ -73,18 +73,19 @@
 
 
 
-  <section id="container__cards">
+  <div id="container__cards">
 
-  </section>
-  <section id="form" class="d-none">
+  </div>
+  <div id="form" class="d-none">
     <div class="flex__form">
       <form id="form__styles" action="">
+        <h2>Tell us about your professional background</h2>
         <label for="title">Job Title</label>
-        <input class="form__input" type="text" name="text" placeholder="Describe your Job title here" id="title">
-        <label for="description">Description</label>
+        <input class="form__input" type="text" name="jobtitle" placeholder="Describe your Job title here" id="title">
+        <label for="title">Description</label>
         <input class="form__input" type="text" name="text" placeholder="Describe the job" id="description">
-        <label for="tags">Tags</label>
-        <select class="form__input" type="text" name="text" placeholder="Location" id="location">
+        <label for="title">Tags</label>
+        <select class="form__input" name="text" id="location">
           <option value="Locations" selected>Locations</option>
           <option class="selected__options" value="Argentina">Argentina</option>
           <option class="selected__options" value="USA">USA</option>
@@ -98,7 +99,7 @@
           <option class="selected__options" value="Noruega">Noruega</option>
 
         </select>
-        <select class="form__input" type="text" name="text" placeholder="Seniority" id="seniority_v">
+        <select class="form__input" name="text" id="seniority_v">
           <option value="Seniority" selected>Seniority</option>
           <option value="Senior">Senior</option>
           <option value="Semi Senior">Semi Senior</option>
@@ -106,7 +107,7 @@
           <option value="Junior Advanced">Junior Advanced</option>
           <option value="Trainee">Trainee</option>
         </select>
-        <select class="form__input" type="text" name="text" placeholder="Category" id="work">
+        <select class="form__input" name="textcategories" id="work">
           <option value="Category" selected>Categories</option>
           <option value="Executive">Executive</option>
           <option value="Development">Development</option>
@@ -122,15 +123,16 @@
         <button class="btn__cancel">Cancelar</button>
       </form>
     </div>
-  </section>
+  </div>
 
 
   <footer class="container__footer">
 
     <img src="images/giflogojobs.gif" alt="jobs-logo-canva-page" class="logo--image" />
-    <a href="#principal" class="links-nav__bar"> <i class="fas fa-home"></i> Home</a>
+    <a href="landing.html" class="links-nav__bar"> <i class="fas fa-home"></i> Home</a>
     Jobs page created by Ashley
-</section>
+  </footer>
+</div>
 
 <div id="modal_size" class="d-none ">
     
@@ -142,7 +144,7 @@
 </div>
 </div>
 </div>
-  </footer>
+
   <script src="js/script.js"></script>
 
   <!-- <img src="images/md.jpg" alt="managing-director"> -->
