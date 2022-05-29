@@ -288,7 +288,6 @@ window.addEventListener("click", (e) => {
 });
 window.addEventListener("keydown", (e) =>{
   if (e.key == "F5" ||(e.ctrlKey && e.key == "F5")){
-    e.preventDefault()
     window.location = "index.html"
   }
 })
