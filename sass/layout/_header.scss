@@ -1,12 +1,13 @@
 .header--content {
-    padding: 2.2em 0;
+    padding: 2.2em 1em;
     background-color: black;
     @include d-flex($direction: column,
-      $justifycontent: flex-start,
+      $justifycontent: center,
       $alignitems: center);
-  
+    
     .nav--bar {
       text-align: center;
+
     }
   
     .links-nav__bar {

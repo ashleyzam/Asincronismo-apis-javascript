@@ -24,7 +24,7 @@ const displayData = (data) => {
       
         <img src="" class="card-img-top" alt="">
         <div class="card-body">
-            <h3 class="card-title">${name}</h3>
+            <h3 class="card-title badge_attribute">${name}</h3>
             <div class="badge">
             <p class="card-text badge_attribute">${location}</p>
             <span class="badge_attribute">${category}</span>
@@ -164,7 +164,7 @@ queryId("save").addEventListener("click", (e) => {
   if (validateFields(saveData())) {
     queryId("blur__principal").classList.add("set_blur");
     queryId("modal_size").classList.remove("d-none");
-    queryId("modal_text").innerHTML = "Por favor, complete los campos.";
+    queryId("modal_text").innerHTML = "x please, complete the fields to continue.";
   } else {
     fetch(`${URL_BASE}jobs`, {
       method: "POST",
@@ -183,7 +183,7 @@ queryId("submit").addEventListener("click", (e) => {
   if (validateFields(saveData())) {
     queryId("blur__principal").classList.add("set_blur");
     queryId("modal_size").classList.remove("d-none");
-    queryId("modal_text").innerHTML = "Por favor, complete los campos.";
+    queryId("modal_text").innerHTML = "x please, complete the fields to continue";
     queryId("btn-danger").classList.add("d-none");
   } else {
     fetch(`${URL_BASE}jobs/${editId}`, {
@@ -288,6 +288,6 @@ window.addEventListener("click", (e) => {
 });
 window.addEventListener("keydown", (e) =>{
   if (e.key == "F5" ||(e.ctrlKey && e.key == "F5")){
-    window.location = "index.html"
+    window.location = "landing.html"
   }
 })

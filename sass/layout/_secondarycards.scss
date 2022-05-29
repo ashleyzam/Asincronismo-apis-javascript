@@ -95,3 +95,9 @@
   .d-none {
     display: none;
   }
+  @media only screen and (max-width: 374px) {
+      .secondary-card-body{
+        margin-right: 0;
+      }
+    
+  }

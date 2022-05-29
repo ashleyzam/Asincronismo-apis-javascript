@@ -6,12 +6,97 @@
   background-size: cover;
   
 }
+.welcome_jobs{
+  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+  height: 150px;
 
+}
+.info{
+  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+}
+.control-form{
+  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+
+}
+.pop_modal_size{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+.pop_modal_position{
+    
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+
+}
+.pop_modal_styles{
+  background-color: $white--color;
+  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+  min-width: 350px;
+  width: 30%;
+  height: 500px;
+  border: 1px solid $button-color;
+}
+.tags_label{
+  color: black;
+  margin: 10px 5px;
+  font-size: 1.2em;
+}
+.input_styles{
+  margin: 5px 5px;
+  width: 100%;
+  padding: 2px 50px;
+  text-align: center;
+}
+.styles_show_password{
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+}
+.passw_styles{
+  color: black;
+  font-size: 1.2em;
+  margin: 10px 10px;
+}
+.buttons_form_login{
+  display: flex;
+}
+.loging_btn{
+  margin: 10px 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5%;
+  cursor: $cursor;
+}
+#log_btn{
+  background-color: #009929;
+}
+.validation_container{
+  flex-wrap: $flex-wrap;
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: flex-end);
+
+}
+.validation_text{
+  font-size: 0.8em;
+  color: red;
+}
+.text-validation{
+  font-size: 0.8em;
+  color: red;
+}
 .search--form__section {
     //min-width: 300px;
     flex-wrap: $flex-wrap;
-    height: 180px;
-    @include d-flex($direction: row, $justifycontent: center, $alignitems: flex-end);
+
+    @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
   
     .select--options {
       padding: 5px 10px;
@@ -71,6 +156,7 @@
   .flex__form {
     height: 600px;
     #form__styles {
+
       @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
   
     }
@@ -133,6 +219,7 @@
 }
   @media only screen and (max-width: 520px) {
     .searching--form{
+
       @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
       height: 250px;
   }
