@@ -8,8 +8,7 @@
 }
 
 .search--form__section {
-    //z-index: 2000;
-    min-width: 350px;
+    //min-width: 300px;
     flex-wrap: $flex-wrap;
     height: 180px;
     @include d-flex($direction: row, $justifycontent: center, $alignitems: flex-end);
@@ -23,6 +22,7 @@
       background-color: $white--color;
       color: black;
       font-family: 'Acme', sans-serif;
+      min-width: 300px;
     }
   
     select:hover {
@@ -42,6 +42,7 @@
       border-radius: 10px;
       border: 1px solid #98ff96;
       cursor: $cursor;
+      margin: 0 5px;
   
     }
   
@@ -52,11 +53,12 @@
     .clear {
       color: $white--color;
       background-color: #40cfff;
-      padding: 5px 14px;
+      padding: 5px 10px;
       outline: none;
       border-radius: 10px;
       border: 1px solid #40cfff;
       cursor: $cursor;
+      margin: 0 5px;
     }
   
     .clear:hover {
@@ -74,7 +76,7 @@
     }
   
     label {
-      color: #3d0b60;
+      color: $white--color;
       margin: 0.3em;
       font-weight: bolder;
       font-size: 1.5em;
@@ -107,22 +109,31 @@
       font-size: $em-size;
     }
   }
-  @media only screen and (max-width: 767px) {
-    .background-image{
-      width: 100%;
-    }
-  }
-  @media only screen and (max-width: 374px) {
-    .background-image{
-      height: 280px;
-      width: 100%;
-      background-size: cover;
-    }
-  }
-
-  @media only screen and (max-width: 374px) {
+.save__btnform{
+  background-color: #009929;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 30px;
+  border: 1px transparent;
+  color: $white--color;
+  cursor: $cursor;
+  outline: none;
+  font-size: $em-size;
+}
+.btn__cancel{
+  background-color: red;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 8px 15px;
+  border: 1px transparent;
+  color: $white--color;
+  cursor: $cursor;
+  outline: none;
+  font-size: $em-size;
+}
+  @media only screen and (max-width: 520px) {
     .searching--form{
       @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-
-    }
+      height: 250px;
   }
+}

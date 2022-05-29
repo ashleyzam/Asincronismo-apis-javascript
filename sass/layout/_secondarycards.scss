@@ -1,16 +1,16 @@
 
 .secondary-card-body {
-  opacity: 89%;
-    background-color: white;
+    opacity: 89%;
     margin-right: 30px;
     border: 1px solid #c5c5c5;
-    // background-color: $white--color;
+    background-color: $white--color;
     border-radius: 20px;
     color: black;
     width: 30%;
     max-width: 600px;
     min-width: 330px;
-    height: 350px;
+    // height: 300px;
+    min-height: 250px;
     padding: $em-size $em-size;
     text-align: center;
     flex: 0 0 auto;
