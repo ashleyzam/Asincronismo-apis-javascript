@@ -1,103 +1,102 @@
-
 .secondary-card-body {
-    opacity: 89%;
-    margin-right: 30px;
-    border: 1px solid #c5c5c5;
-    background-color: $white--color;
-    border-radius: 20px;
-    color: black;
-    width: 30%;
-    max-width: 600px;
-    min-width: 330px;
-    // height: 300px;
-    min-height: 250px;
-    padding: $em-size $em-size;
-    text-align: center;
-    flex: 0 0 auto;
-    overflow: hidden;
-    transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
-    z-index: 1000;
-    // @include d-flex($direction: column, $aligncontent: space-evenly, $alignitems: center);
-    // @include material-shadow();
-    // background: linear-gradient(to right bottom, #cea0f1, #e6d3f9);
-    @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
-  }
-  .title_card{
-    color: black;
-  }
-  .secondary-card-body:hover {
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    ;
-  }
-  .d-flex__buttons {
-  
-    @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
-  
-    .edit__btn {
-      background-color: #7e33b7;
-      border-radius: 0.5em;
-      margin: 5px;
-      padding: 8px 30px;
-      border: 1px transparent;
-      color: $white--color;
-      cursor: $cursor;
-      outline: none;
-      font-size: $em-size;
-    }
-  
-    .edit__btn:hover {
-      background-color: #a167c9;
-    }
-  
-    .delete__btn {
-      border-radius: 0.5em;
-      margin: 5px;
-      padding: 8px 20px;
-      background-color: red;
-      border: 1px transparent;
-      color: $white--color;
-      cursor: $cursor;
-      outline: none;
-      font-size: $em-size;
-  
-    }
-  }
-  
-  .btn {
-    margin-top: $em-size;
+  opacity: 89%;
+  margin-right: 30px;
+  border: 1px solid #c5c5c5;
+  background-color: $white--color;
+  border-radius: 20px;
+  color: black;
+  width: 30%;
+  max-width: 600px;
+  min-width: 330px;
+  min-height: 250px;
+  padding: $em-size $em-size;
+  text-align: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
+  z-index: 1000;
+  @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
+}
+
+.title_card {
+  color: black;
+}
+
+.secondary-card-body:hover {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  ;
+}
+
+.d-flex__buttons {
+
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+
+  .edit__btn {
+    background-color: olivedrab;
     border-radius: 0.5em;
-    background-color: black;
-    color: $white--color;
-    font-size: $em-size;
-    padding: 0.4em 2em;
-    cursor: $cursor;
-    border: 0.1px solid white;
-  }
-  
-  .btn:hover {
-    background-color: #3c3c3c;
-  }
-  
-  .goback_btn {
-    padding: $em-size $em-size;
-    background-color: #759eff;
-    border: none;
     margin: 5px;
-    margin-top: 10px;
-    border-radius: 0.4em;
-  }
-  
-  a {
-    text-decoration: none;
+    padding: 8px 30px;
+    border: 1px transparent;
     color: $white--color;
+    cursor: $cursor;
+    outline: none;
+    font-size: $em-size;
   }
-  
-  .d-none {
-    display: none;
+
+  .edit__btn:hover {
+    background-color: #5ccb5f;
   }
-  @media only screen and (max-width: 374px) {
-      .secondary-card-body{
-        margin-right: 0;
-      }
-    
+
+  .delete__btn {
+    border-radius: 0.5em;
+    margin: 5px;
+    padding: 8px 20px;
+    background-color: red;
+    border: 1px transparent;
+    color: $white--color;
+    cursor: $cursor;
+    outline: none;
+    font-size: $em-size;
+
   }
+}
+
+.btn {
+  margin-top: $em-size;
+  border-radius: 0.5em;
+  background-color: black;
+  color: $white--color;
+  font-size: $em-size;
+  padding: 0.4em 2em;
+  cursor: $cursor;
+  border: 0.1px solid white;
+}
+
+.btn:hover {
+  background-color: #3c3c3c;
+}
+
+.goback_btn {
+  padding: $em-size $em-size;
+  background-color: #759eff;
+  border: none;
+  margin: 5px;
+  margin-top: 10px;
+  border-radius: 0.4em;
+}
+
+a {
+  text-decoration: none;
+  color: $white--color;
+}
+
+.d-none {
+  display: none;
+}
+
+@media only screen and (max-width: 374px) {
+  .secondary-card-body {
+    margin-right: 0;
+  }
+
+}

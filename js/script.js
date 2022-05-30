@@ -101,15 +101,12 @@ const filterData = (loc, sen, cat) => {
 queryId("search_btn").addEventListener("click", (e) => {
   e.preventDefault();
    if(containerError()){
-    queryId("container__cards").style.maxHeight = "800px";
-    queryId("container__cards").style.paddingBottom = "250px";
     const msg =  "oops something went wrong. please choose an option to continue your search"
     errorMessage(msg)
    }
    else{
   queryId("form").classList.add("d-none");
   cleanData();
-  queryId("container__cards").style.minHeight = "250px";
   filterData(
     queryId("locations").value,
     queryId("seniority").value,
@@ -143,12 +140,9 @@ const saveData = () => {
 };
 queryId("create-job").addEventListener("click", (e) => {
   e.preventDefault();
+  cleanData()
   setSpinner()
   cleanForm()
-  queryId("form_display").classList.add("d-none");
-  queryId("container__cards").style.minHeight = "500px";
-  queryId("container__cards").style.maxHeight = "500px";
-  queryId("container__cards").style.paddingBottom = "150px";
   queryId("container__cards").style.margin = "0px";
   setTimeout(() => {
     cleanData();
@@ -164,7 +158,7 @@ queryId("save").addEventListener("click", (e) => {
   if (validateFields(saveData())) {
     queryId("blur__principal").classList.add("set_blur");
     queryId("modal_size").classList.remove("d-none");
-    queryId("modal_text").innerHTML = "x please, complete the fields to continue.";
+    queryId("modal_text").innerHTML = "please, complete the fields to continue.";
   } else {
     fetch(`${URL_BASE}jobs`, {
       method: "POST",
@@ -173,7 +167,7 @@ queryId("save").addEventListener("click", (e) => {
       },
       body: JSON.stringify(saveData()),
     })
-      .catch((err) => error404(err))
+      .catch((err) => console.log(err))
       .finally(() => location.reload());
   }
 });
@@ -183,17 +177,17 @@ queryId("submit").addEventListener("click", (e) => {
   if (validateFields(saveData())) {
     queryId("blur__principal").classList.add("set_blur");
     queryId("modal_size").classList.remove("d-none");
-    queryId("modal_text").innerHTML = "x please, complete the fields to continue";
+    queryId("modal_text").innerHTML = "please, complete the fields to continue";
     queryId("btn-danger").classList.add("d-none");
   } else {
-    fetch(`${URL_BASE}jobs/${editId}`, {
+    fetch(`${URL_BASE}`, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(saveData()),
     })
-      .catch((err) => error404(err))
+      .catch((err) => console.log(err))
       .finally(() => location.reload());
   }
 });
@@ -207,7 +201,7 @@ const getDataById = (id) => {
   fetch(`${URL_BASE}jobs/${id}`)
     .then((response) => response.json())
     .then((data) => recordData(data))
-    .catch((err) => error404(err));
+    .catch((err) => console.log(err));
   };
 const recordData = (data) => {
     const { name, description, location, category, seniority } = data;

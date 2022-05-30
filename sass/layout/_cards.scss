@@ -1,66 +1,72 @@
 #container__cards {
-    flex-wrap: $flex-wrap;
-    bottom: 0;
-    min-height: 800px;
-    margin-top: 100px;
-    padding-bottom: 4em;
-  
-    @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
-  }
-  
-  .card-body {
-    background-image: url("https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
-    opacity: 92%;
-    background-position:  bottom right;
-    @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
-    @include material-shadow();
-    margin: auto;
-    border-radius: 20px;
-    max-width: 600px;
-    min-width: 330px;
-    width: 20%;
-    height: 480px;
-    margin: 10px;
-    flex: 0 0 auto;
-    overflow: hidden;
-    transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
-    z-index: 1000;
-  
-  
-  }
-  
-  .card-body:hover {
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    ;
-  }
-  
-  .card-title {
-    opacity: 1;
-    color: $white--color;
-    text-transform: uppercase;
-    font-weight: bolder;
+  flex-wrap: $flex-wrap;
+  bottom: 0;
+  min-height: 800px;
+  margin-top: 100px;
+  padding-bottom: 4em;
 
-  }
-  
-  .card-text {
-    opacity: 1;
-    font-size: 1.2em;
-    color: black;
-  }
-  
-  .badge {
-    width: 100%;
-    flex-wrap: $flex-wrap;
-    @include d-flex($direction: row-reverse, $justifycontent: center, $alignitems: center);
-  
-  }
-  
-  .badge_attribute {
-    background-color: black;
-    color: white;
-    padding: 0.1em $em-size;
-    margin: 7px 5px;
-    font-size: 1.2rem;
-  }
-  
-  
+  @include d-flex(
+    $direction: row,
+    $justifycontent: center,
+    $alignitems: center
+  );
+}
+
+.card-body {
+  background-image: url("https://images.unsplash.com/photo-1604964432806-254d07c11f32?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
+  opacity: 92%;
+  background-position: bottom right;
+  @include d-flex(
+    $direction: column,
+    $justifycontent: space-evenly,
+    $alignitems: center
+  );
+  @include material-shadow();
+  margin: auto;
+  border-radius: 20px;
+  max-width: 600px;
+  min-width: 330px;
+  width: 20%;
+  height: 480px;
+  margin: 10px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  transition: opacity 0.4s $bezier, transform 0.4s $bezier,
+    box-shadow 0.4s $bezier;
+  z-index: 1000;
+}
+
+.card-body:hover {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.card-title {
+  opacity: 1;
+  color: $white--color;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.card-text {
+  opacity: 1;
+  font-size: 1.2em;
+  color: black;
+}
+
+.badge {
+  width: 100%;
+  flex-wrap: $flex-wrap;
+  @include d-flex(
+    $direction: row-reverse,
+    $justifycontent: center,
+    $alignitems: center
+  );
+}
+
+.badge_attribute {
+  background-color: black;
+  color: white;
+  padding: 0.1em $em-size;
+  margin: 7px 5px;
+  font-size: 1.2rem;
+}

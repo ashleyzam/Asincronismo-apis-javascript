@@ -47,13 +47,13 @@ body {
 .header--content {
   padding: 2.2em 1em;
   background-color: black;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 .header--content .nav--bar {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 .header--content .links-nav__bar {
   text-transform: uppercase;
@@ -70,12 +70,6 @@ body {
 }
 .header--content .links-nav__bar:hover {
   border-bottom: #fff 1px solid;
-}
-
-.background-image {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .welcome_jobs {
@@ -196,8 +190,15 @@ body {
   color: red;
 }
 
-.search--form__section {
+.background-image {
+  width: 100%;
   flex-wrap: wrap;
+  background: url("https://img.freepik.com/vector-gratis/banner-vacante-trabajo-minimo-publicacion-social-estamos-hring-fondo-lupa-garabatos_90099-909.jpg?w=900");
+  background-position: right top;
+}
+
+.search--form__section {
+  height: 270px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -206,6 +207,10 @@ body {
 .search--form__section .select--options {
   padding: 5px 10px;
   margin: 5px 5px;
+}
+.search--form__section .title_job {
+  text-align: center;
+  color: black;
 }
 .search--form__section select {
   background-color: white;
@@ -225,16 +230,17 @@ body {
 }
 .search--form__section .search {
   color: white;
-  background-color: #7e33b7;
+  background-color: black;
   padding: 5px 10px;
   outline: none;
   border-radius: 10px;
-  border: 1px solid #98ff96;
+  border: none;
   cursor: pointer;
   margin: 0 5px;
 }
 .search--form__section .search:hover {
-  background-color: #a167c9;
+  background-color: white;
+  color: black;
 }
 .search--form__section .clear {
   color: white;
@@ -242,7 +248,7 @@ body {
   padding: 5px 10px;
   outline: none;
   border-radius: 10px;
-  border: 1px solid #40cfff;
+  border: none;
   cursor: pointer;
   margin: 0 5px;
 }
@@ -252,6 +258,7 @@ body {
 
 .err {
   font-size: 1.5em;
+  height: 200px;
 }
 
 .flex__form {
@@ -264,13 +271,14 @@ body {
   align-items: center;
 }
 .flex__form label {
-  color: white;
+  color: black;
   margin: 0.3em;
   font-weight: bolder;
   font-size: 1.5em;
 }
 .flex__form .form__input {
   width: 50%;
+  min-width: 320px;
   margin: 0.5em;
   padding: 0.5em 0;
   font-size: 1em;
@@ -282,7 +290,7 @@ body {
   font-size: 1em;
 }
 .flex__form .edit__btnform {
-  background-color: #009929;
+  background-color: olivedrab;
   border-radius: 8px;
   margin: 5px;
   padding: 8px 30px;
@@ -294,7 +302,7 @@ body {
 }
 
 .save__btnform {
-  background-color: #009929;
+  background-color: olivedrab;
   border-radius: 8px;
   margin: 5px;
   padding: 8px 30px;
@@ -317,13 +325,29 @@ body {
   font-size: 1em;
 }
 
+.tell_us {
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  margin: 10px 5px;
+  font-weight: lighter;
+}
+
 @media only screen and (max-width: 520px) {
   .searching--form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 250px;
+    height: 150px;
+  }
+  .searching--form .background-image {
+    background-position: right bottom;
+  }
+}
+@media only screen and (max-width: 374px) {
+  .background-image {
+    background-position: center right;
   }
 }
 #container__cards {
@@ -432,7 +456,7 @@ body {
   align-items: center;
 }
 .d-flex__buttons .edit__btn {
-  background-color: #7e33b7;
+  background-color: olivedrab;
   border-radius: 0.5em;
   margin: 5px;
   padding: 8px 30px;
@@ -443,7 +467,7 @@ body {
   font-size: 1em;
 }
 .d-flex__buttons .edit__btn:hover {
-  background-color: #a167c9;
+  background-color: #5ccb5f;
 }
 .d-flex__buttons .delete__btn {
   border-radius: 0.5em;
@@ -655,6 +679,7 @@ a {
   color: white;
   position: relative;
   left: 0px;
+  margin-top: 50px;
   bottom: 0px;
   width: 100%;
   text-align: center;
@@ -728,9 +753,9 @@ a {
 }
 
 .home_body {
-  background: url("https://i.pinimg.com/564x/70/fd/66/70fd661c552a98cfe353a6c5feb656ff.jpg");
+  background: url("https://img.freepik.com/foto-gratis/fondo-textura-efecto-falla-negra_53876-102440.jpg?w=740&t=st=1653939531~exp=1653940131~hmac=c23ebce0774533e70abd7576036d35749d97a117e55e8f21182eb894dad23b4b");
   background-size: cover;
-  background-position: right center;
+  background-position: left center;
   height: 1500px;
   min-height: 500px;
 }
@@ -761,7 +786,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   width: 20%;
-  background-color: white;
+  background-color: transparent;
   min-width: 300px;
   max-width: 600px;
   margin: 10px;
@@ -777,7 +802,7 @@ h4 {
 }
 
 p {
-  color: black;
+  color: white;
   margin: 10px;
   font-size: 1.2em;
 }
@@ -789,7 +814,7 @@ p {
 }
 @media only screen and (max-width: 520px) {
   .info-text {
-    margin-left: 10px;
+    margin-left: 50px;
     font-size: 5em;
   }
 }
