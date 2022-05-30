@@ -16,6 +16,11 @@ window.addEventListener("keydown", (e) => {
     queryId("open_log").classList.add("d-none");
   }
 });
+window.addEventListener("click", (e) => {
+  if (e.target === queryId("close_modal")) {
+    queryId("open_log").classList.add("d-none");
+  }
+});
 
 queryId("log_btn").addEventListener("click", (e) => {
   e.preventDefault();

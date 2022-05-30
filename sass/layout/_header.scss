@@ -1,31 +1,29 @@
 .header--content {
-    padding: 2.2em 1em;
-    background-color: black;
-    @include d-flex($direction: column,
-      $justifycontent: center,
-      $alignitems: center);
-    
-    .nav--bar {
-      text-align: center;
+  padding: 2.2em 1em;
+  background-color: black;
 
-    }
-  
-    .links-nav__bar {
-      text-transform: uppercase;
-      font-family: 'Acme', sans-serif;
-      color: $white--color;
-      padding: 5px;
-      font-size: $em-size;
-      font-weight: bolder;
-      padding: 10px;
-      margin-right: 15px;
-      text-decoration: none;
-      outline: none;
-      border-bottom: transparent 1px solid;
-    }
-  
-    .links-nav__bar:hover {
-      border-bottom: #fff 1px solid;
-    }
-  
+
+  .nav--bar {
+    text-align: center;
+    @include d-flex($direction: row, $justifycontent: space-between, $alignitems: center);
   }
+
+  .links-nav__bar {
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif;
+    color: $white--color;
+    padding: 5px;
+    font-size: $em-size;
+    font-weight: bolder;
+    padding: 10px;
+    margin-right: 15px;
+    text-decoration: none;
+    outline: none;
+    border-bottom: transparent 1px solid;
+  }
+
+  .links-nav__bar:hover {
+    border-bottom: #fff 1px solid;
+  }
+
+}

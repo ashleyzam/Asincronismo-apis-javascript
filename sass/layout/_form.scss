@@ -1,24 +1,19 @@
-.background-image{
-  // height: 350px;
-  // background-image: url('https://www.mediasource.mx/hs-fs/hubfs/blog-files/fondos-web.jpg?width=640&name=fondos-web.jpg&v=2');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  
-}
-.welcome_jobs{
+.welcome_jobs {
   @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
   height: 150px;
 
 }
-.info{
+
+.info {
   @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
 }
-.control-form{
+
+.control-form {
   @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
 
 }
-.pop_modal_size{
+
+.pop_modal_size {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -26,8 +21,9 @@
   top: 0;
   z-index: 2000;
 }
-.pop_modal_position{
-    
+
+.pop_modal_position {
+
   @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
   position: absolute;
   top: 0px;
@@ -39,7 +35,8 @@
   z-index: 2;
 
 }
-.pop_modal_styles{
+
+.pop_modal_styles {
   background-color: $white--color;
   @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
   min-width: 350px;
@@ -47,156 +44,186 @@
   height: 500px;
   border: 1px solid $button-color;
 }
-.tags_label{
+
+.tags_label {
   color: black;
   margin: 10px 5px;
   font-size: 1.2em;
 }
-.input_styles{
+
+.input_styles {
   margin: 5px 5px;
   width: 100%;
   padding: 2px 50px;
   text-align: center;
 }
-.styles_show_password{
+
+.styles_show_password {
   @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
 }
-.passw_styles{
+
+.passw_styles {
   color: black;
   font-size: 1.2em;
   margin: 10px 10px;
 }
-.buttons_form_login{
+
+.buttons_form_login {
   display: flex;
 }
-.loging_btn{
+
+.loging_btn {
   margin: 10px 10px;
   padding: 5px 10px;
   border: none;
   border-radius: 5%;
   cursor: $cursor;
 }
-#log_btn{
+
+#log_btn {
   background-color: #009929;
 }
-.validation_container{
+
+.validation_container {
   flex-wrap: $flex-wrap;
   @include d-flex($direction: row, $justifycontent: center, $alignitems: flex-end);
 
 }
-.validation_text{
-  font-size: 0.8em;
-  color: red;
-}
-.text-validation{
-  font-size: 0.8em;
-  color: red;
-}
-.search--form__section {
-    //min-width: 300px;
-    flex-wrap: $flex-wrap;
 
-    @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
-  
-    .select--options {
-      padding: 5px 10px;
-      margin: 5px 5px;
-    }
-  
-    select {
-      background-color: $white--color;
-      color: black;
-      font-family: 'Acme', sans-serif;
-      min-width: 300px;
-    }
-  
-    select:hover {
-      background-color: #9ce0db;
-    }
-  
-    .form__buttons {
-      margin: 5px 0;
-      @include d-flex($direction: row, $justifycontent: flex-end, $alignitems: center);
-    }
-  
-    .search {
-      color: $white--color;
-      background-color: $button-color;
-      padding: 5px 10px;
-      outline: none;
-      border-radius: 10px;
-      border: 1px solid #98ff96;
-      cursor: $cursor;
-      margin: 0 5px;
-  
-    }
-  
-    .search:hover {
-      background-color: $button--colorhover;
-    }
-  
-    .clear {
-      color: $white--color;
-      background-color: #40cfff;
-      padding: 5px 10px;
-      outline: none;
-      border-radius: 10px;
-      border: 1px solid #40cfff;
-      cursor: $cursor;
-      margin: 0 5px;
-    }
-  
-    .clear:hover {
-      background-color: #94e7ff;
-    }
+.validation_text {
+  font-size: 0.8em;
+  color: red;
+}
+
+.text-validation {
+  font-size: 0.8em;
+  color: red;
+}
+
+.background-image {
+
+  width: 100%;
+  flex-wrap: $flex-wrap;
+  background: url("https://img.freepik.com/vector-gratis/banner-vacante-trabajo-minimo-publicacion-social-estamos-hring-fondo-lupa-garabatos_90099-909.jpg?w=900");
+  background-position: right top;
+
+}
+
+.search--form__section {
+  height: 270px;
+  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+
+  .select--options {
+    padding: 5px 10px;
+    margin: 5px 5px;
   }
-  .err{
+
+  .title_job {
+    text-align: center;
+    color: black;
+  }
+
+  select {
+    background-color: $white--color;
+    color: black;
+    font-family: 'Acme', sans-serif;
+    min-width: 300px;
+  }
+
+  select:hover {
+    background-color: #9ce0db;
+  }
+
+  .form__buttons {
+    margin: 5px 0;
+    @include d-flex($direction: row, $justifycontent: flex-end, $alignitems: center);
+  }
+
+  .search {
+    color: $white--color;
+    background-color: black;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    cursor: $cursor;
+    margin: 0 5px;
+
+  }
+
+  .search:hover {
+    background-color: $white--color;
+    color: black;
+  }
+
+  .clear {
+    color: $white--color;
+    background-color: #40cfff;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    cursor: $cursor;
+    margin: 0 5px;
+  }
+
+  .clear:hover {
+    background-color: #94e7ff;
+  }
+}
+
+.err {
+  font-size: 1.5em;
+  height: 200px;
+}
+
+.flex__form {
+  height: 600px;
+
+  #form__styles {
+
+    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+
+  }
+
+  label {
+    color: black;
+    margin: 0.3em;
+    font-weight: bolder;
     font-size: 1.5em;
   }
-  .flex__form {
-    height: 600px;
-    #form__styles {
 
-      @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-  
-    }
-  
-    label {
-      color: $white--color;
-      margin: 0.3em;
-      font-weight: bolder;
-      font-size: 1.5em;
-    }
-  
-    .form__input {
-      width: $widthfifty;
-      margin: 0.5em;
-      padding: 0.5em 0;
-      font-size: $em-size;
-    }
-  
-    select {
-      width: $widthfifty;
-      margin: 0.7em;
-      padding: 0.5em 0;
-      font-size: $em-size;
-  
-    }
-  
-    .edit__btnform {
-      background-color: #009929;
-      border-radius: 8px;
-      margin: 5px;
-      padding: 8px 30px;
-      border: 1px transparent;
-      color: $white--color;
-      cursor: $cursor;
-      outline: none;
-      font-size: $em-size;
-    }
+  .form__input {
+    width: $widthfifty;
+    min-width: 320px;
+    margin: 0.5em;
+    padding: 0.5em 0;
+    font-size: $em-size;
   }
-.save__btnform{
-  background-color: #009929;
+
+  select {
+    width: $widthfifty;
+    margin: 0.7em;
+    padding: 0.5em 0;
+    font-size: $em-size;
+
+  }
+
+  .edit__btnform {
+    background-color: olivedrab;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 8px 30px;
+    border: 1px transparent;
+    color: $white--color;
+    cursor: $cursor;
+    outline: none;
+    font-size: $em-size;
+  }
+}
+
+.save__btnform {
+  background-color: olivedrab;
   border-radius: 8px;
   margin: 5px;
   padding: 8px 30px;
@@ -206,7 +233,8 @@
   outline: none;
   font-size: $em-size;
 }
-.btn__cancel{
+
+.btn__cancel {
   background-color: red;
   border-radius: 8px;
   margin: 5px;
@@ -217,10 +245,31 @@
   outline: none;
   font-size: $em-size;
 }
-  @media only screen and (max-width: 520px) {
-    .searching--form{
 
-      @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-      height: 250px;
+.tell_us {
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  margin: 10px 5px;
+  font-weight: lighter;
+}
+
+@media only screen and (max-width: 520px) {
+  .searching--form {
+
+    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+    height: 150px;
+
+    .background-image {
+      background-position: right bottom;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 374px) {
+
+  .background-image {
+    background-position: center right;
   }
 }
