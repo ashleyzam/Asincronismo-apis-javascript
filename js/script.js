@@ -180,7 +180,7 @@ queryId("submit").addEventListener("click", (e) => {
     queryId("modal_text").innerHTML = "please, complete the fields to continue";
     queryId("btn-danger").classList.add("d-none");
   } else {
-    fetch(`${URL_BASE}`, {
+    fetch(`${URL_BASE}jobs/${editId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
