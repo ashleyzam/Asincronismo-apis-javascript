@@ -38,7 +38,7 @@ queryId("log_btn").addEventListener("click", (e) => {
 });
 
 const validateLoginForm = () => {
-  return queryId("password").value == "" && queryId("input_login").value == "";
+  return queryId("password").value == "" || queryId("input_login").value == "";
 };
 
 const validateUser = () => {
