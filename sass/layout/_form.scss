@@ -1,16 +1,26 @@
 .welcome_jobs {
-  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+  @include d-flex(
+    $direction: column,
+    $justifycontent: center,
+    $alignitems: center
+  );
   height: 150px;
-
 }
 
 .info {
-  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+  @include d-flex(
+    $direction: column,
+    $justifycontent: center,
+    $alignitems: center
+  );
 }
 
 .control-form {
-  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-
+  @include d-flex(
+    $direction: column,
+    $justifycontent: center,
+    $alignitems: center
+  );
 }
 
 .pop_modal_size {
@@ -23,25 +33,31 @@
 }
 
 .pop_modal_position {
-
-  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+  @include d-flex(
+    $direction: row,
+    $justifycontent: center,
+    $alignitems: center
+  );
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 2;
-
 }
 
 .pop_modal_styles {
   background-color: $white--color;
-  @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-  min-width: 350px;
-  width: 30%;
-  height: 500px;
+  @include d-flex(
+    $direction: column,
+    $justifycontent: center,
+    $alignitems: center
+  );
+  min-width: 250px;
+  width: 20%;
+  height: 600px;
   border: 1px solid $button-color;
 }
 
@@ -59,7 +75,11 @@
 }
 
 .styles_show_password {
-  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+  @include d-flex(
+    $direction: row,
+    $justifycontent: center,
+    $alignitems: center
+  );
 }
 
 .passw_styles {
@@ -82,12 +102,16 @@
 
 #log_btn {
   background-color: #009929;
+  color: white;
 }
 
 .validation_container {
   flex-wrap: $flex-wrap;
-  @include d-flex($direction: row, $justifycontent: center, $alignitems: flex-end);
-
+  @include d-flex(
+    $direction: row,
+    $justifycontent: center,
+    $alignitems: flex-end
+  );
 }
 
 .validation_text {
@@ -101,17 +125,19 @@
 }
 
 .background-image {
-
   width: 100%;
   flex-wrap: $flex-wrap;
   background: url("https://img.freepik.com/vector-gratis/banner-vacante-trabajo-minimo-publicacion-social-estamos-hring-fondo-lupa-garabatos_90099-909.jpg?w=900");
   background-position: right top;
-
 }
 
 .search--form__section {
   height: 270px;
-  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+  @include d-flex(
+    $direction: row,
+    $justifycontent: center,
+    $alignitems: center
+  );
 
   .select--options {
     padding: 5px 10px;
@@ -126,7 +152,7 @@
   select {
     background-color: $white--color;
     color: black;
-    font-family: 'Acme', sans-serif;
+    font-family: "Acme", sans-serif;
     min-width: 300px;
   }
 
@@ -136,7 +162,11 @@
 
   .form__buttons {
     margin: 5px 0;
-    @include d-flex($direction: row, $justifycontent: flex-end, $alignitems: center);
+    @include d-flex(
+      $direction: row,
+      $justifycontent: flex-end,
+      $alignitems: center
+    );
   }
 
   .search {
@@ -148,7 +178,6 @@
     border: none;
     cursor: $cursor;
     margin: 0 5px;
-
   }
 
   .search:hover {
@@ -178,12 +207,15 @@
 }
 
 .flex__form {
-  height: 600px;
+  padding-bottom: 20px;
 
   #form__styles {
-
-    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
-
+    background-color: #ebebeb;
+    @include d-flex(
+      $direction: column,
+      $justifycontent: center,
+      $alignitems: center
+    );
   }
 
   label {
@@ -206,7 +238,6 @@
     margin: 0.7em;
     padding: 0.5em 0;
     font-size: $em-size;
-
   }
 
   .edit__btnform {
@@ -256,19 +287,20 @@
 
 @media only screen and (max-width: 520px) {
   .searching--form {
-
-    @include d-flex($direction: column, $justifycontent: center, $alignitems: center);
+    @include d-flex(
+      $direction: column,
+      $justifycontent: center,
+      $alignitems: center
+    );
     height: 150px;
 
     .background-image {
       background-position: right bottom;
     }
-
   }
 }
 
 @media only screen and (max-width: 374px) {
-
   .background-image {
     background-position: center right;
   }

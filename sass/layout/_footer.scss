@@ -1,11 +1,14 @@
 .container__footer {
-  @include d-flex($direction: row, $justifycontent: space-between, $alignitems: center);
+  @include d-flex(
+    $direction: row,
+    $justifycontent: space-between,
+    $alignitems: center
+  );
   background-color: black;
-  padding: $em-size 2em;
+  padding: 1.5em 2em;
   color: white;
   position: relative;
   left: 0px;
-  margin-top: 50px;
   bottom: 0px;
   width: 100%;
   text-align: center;
@@ -16,7 +19,7 @@
 
   .links-nav__bar {
     text-transform: uppercase;
-    font-family: 'Acme', sans-serif;
+    font-family: "Acme", sans-serif;
     color: $white--color;
     padding: 5px;
     font-size: $em-size;

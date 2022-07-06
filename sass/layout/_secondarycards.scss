@@ -5,17 +5,22 @@
   background-color: $white--color;
   border-radius: 20px;
   color: black;
-  width: 30%;
+  width: 20%;
   max-width: 600px;
   min-width: 330px;
-  min-height: 250px;
+  min-height: 300px;
   padding: $em-size $em-size;
   text-align: center;
   flex: 0 0 auto;
   overflow: hidden;
-  transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
+  transition: opacity 0.4s $bezier, transform 0.4s $bezier,
+    box-shadow 0.4s $bezier;
   z-index: 1000;
-  @include d-flex($direction: column, $justifycontent: space-evenly, $alignitems: center);
+  @include d-flex(
+    $direction: column,
+    $justifycontent: space-evenly,
+    $alignitems: center
+  );
 }
 
 .title_card {
@@ -24,12 +29,14 @@
 
 .secondary-card-body:hover {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  ;
 }
 
 .d-flex__buttons {
-
-  @include d-flex($direction: row, $justifycontent: center, $alignitems: center);
+  @include d-flex(
+    $direction: row,
+    $justifycontent: center,
+    $alignitems: center
+  );
 
   .edit__btn {
     background-color: olivedrab;
@@ -57,7 +64,6 @@
     cursor: $cursor;
     outline: none;
     font-size: $em-size;
-
   }
 }
 
@@ -98,5 +104,4 @@ a {
   .secondary-card-body {
     margin-right: 0;
   }
-
 }

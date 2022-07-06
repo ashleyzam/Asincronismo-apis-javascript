@@ -4,7 +4,6 @@ let editId = 0;
 let deleteId = 0;
 let isId = 0;
 
-
 const receiveData = () => {
   fetch(`${URL_BASE}jobs`)
     .then((res) => res.json())
@@ -12,7 +11,6 @@ const receiveData = () => {
     .catch((err) => console.log(err));
 };
 receiveData();
-
 
 const displayData = (data) => {
   setSpinner();
@@ -26,8 +24,9 @@ const displayData = (data) => {
         <div class="card-body">
             <h3 class="card-title badge_attribute">${name}</h3>
             <div class="badge">
+            <img src="" alt="">
             <p class="card-text badge_attribute">${location}</p>
-            <span class="badge_attribute">${category}</span>
+            <span class="card-text badge_attribute">${category}</span>
             <span class="badge_attribute">${seniority}</span>
             </div>
             <button class="btn btn-info" onclick="cardDetail(${id})">See more details <span>&rarr;</span></button>
@@ -37,11 +36,11 @@ const displayData = (data) => {
   }, 700);
 };
 const cardDetail = (id) => {
-  queryId("container__cards").style.minHeight = "600px";
-  queryId("container__cards").style.flexDirection= "column"
-  queryId("container__cards").style.marginTop = "0px"
-  queryId("container__cards").style.padding ="0px"
-  queryId("background__image").classList.add("d-none")
+  queryId("container__cards").style.minHeight = "800px";
+  queryId("container__cards").style.flexDirection = "column";
+  queryId("container__cards").style.marginTop = "0px";
+  queryId("container__cards").style.padding = "0px";
+  queryId("background__image").classList.add("d-none");
   cleanData();
   queryId("form_display").classList.add("d-none");
   fetch(`${URL_BASE}jobs`)
@@ -66,7 +65,7 @@ const renderCards = ({
     queryId("container__cards").innerHTML = `
      <div class="secondary-card-body">
      <h3 class="card-title title_card">${name}</h3>
-     <p class="card-text ">${description}</p>
+     <p class="card_textt">${description}</p>
      <div class="badge">
      <p class="card-text badge_attribute">${location}</p>
      <span class="badge_attribute">${category}</span>
@@ -100,19 +99,19 @@ const filterData = (loc, sen, cat) => {
 };
 queryId("search_btn").addEventListener("click", (e) => {
   e.preventDefault();
-   if(containerError()){
-    const msg =  "oops something went wrong. please choose an option to continue your search"
-    errorMessage(msg)
-   }
-   else{
-  queryId("form").classList.add("d-none");
-  cleanData();
-  filterData(
-    queryId("locations").value,
-    queryId("seniority").value,
-    queryId("category").value
-  );
- }
+  if (containerError()) {
+    const msg =
+      "oops something went wrong. please choose an option to continue your search";
+    errorMessage(msg);
+  } else {
+    queryId("form").classList.add("d-none");
+    cleanData();
+    filterData(
+      queryId("locations").value,
+      queryId("seniority").value,
+      queryId("category").value
+    );
+  }
 });
 
 const modalDeleteData = (id) => {
@@ -140,9 +139,9 @@ const saveData = () => {
 };
 queryId("create-job").addEventListener("click", (e) => {
   e.preventDefault();
-  cleanData()
-  setSpinner()
-  cleanForm()
+  cleanData();
+  setSpinner();
+  cleanForm();
   queryId("container__cards").style.margin = "0px";
   setTimeout(() => {
     cleanData();
@@ -158,7 +157,8 @@ queryId("save").addEventListener("click", (e) => {
   if (validateFields(saveData())) {
     queryId("blur__principal").classList.add("set_blur");
     queryId("modal_size").classList.remove("d-none");
-    queryId("modal_text").innerHTML = "please, complete the fields to continue.";
+    queryId("modal_text").innerHTML =
+      "please, complete the fields to continue.";
   } else {
     fetch(`${URL_BASE}jobs`, {
       method: "POST",
@@ -202,23 +202,23 @@ const getDataById = (id) => {
     .then((response) => response.json())
     .then((data) => recordData(data))
     .catch((err) => console.log(err));
-  };
+};
 const recordData = (data) => {
-    const { name, description, location, category, seniority } = data;
-    queryId("title").value = name;
-    queryId("description").value = description;
-    queryId("location").value = location;
-    queryId("work").value = category;
-    queryId("seniority_v").value = seniority;
-  };
-  
-const cleanForm = () =>{
-queryId("title").value = "";
-queryId("description").value = ""
-queryId("location").value = "Locations";
-queryId("work").value = "Category";
-queryId("seniority_v").value = "Seniority";
-}
+  const { name, description, location, category, seniority } = data;
+  queryId("title").value = name;
+  queryId("description").value = description;
+  queryId("location").value = location;
+  queryId("work").value = category;
+  queryId("seniority_v").value = seniority;
+};
+
+const cleanForm = () => {
+  queryId("title").value = "";
+  queryId("description").value = "";
+  queryId("location").value = "Locations";
+  queryId("work").value = "Category";
+  queryId("seniority_v").value = "Seniority";
+};
 
 const cleanData = () => {
   queryId("container__cards").innerHTML = "";
@@ -246,26 +246,24 @@ const setSpinner = () => {
 </div>`;
 };
 
-const errorMessage = (text) =>{
-  queryId("container__cards").style.minHeight = "150px"
+const errorMessage = (text) => {
+  queryId("container__cards").style.minHeight = "150px";
   queryId("container__cards").innerHTML = `
   <p class="err" style="color: white">${text}</p>
  
-  `
-}
-const containerError = () =>{
+  `;
+};
+const containerError = () => {
   return (
-    queryId("locations").value == "Location"&& 
+    queryId("locations").value == "Location" &&
     queryId("seniority").value == "senioritY" &&
     queryId("category").value == "Category"
- )
- 
-}
-const error404 = () =>{
- const msg = "oops something went wrong. PAGE NOT FOUND 404"
- errorMessage(msg)
-}
-
+  );
+};
+const error404 = () => {
+  const msg = "oops something went wrong. PAGE NOT FOUND 404";
+  errorMessage(msg);
+};
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" || e.key === "Scape") {
@@ -275,13 +273,16 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("click", (e) => {
-  if (e.target === queryId("close_modal") ||e.target === queryId("close__modal")) {
+  if (
+    e.target === queryId("close_modal") ||
+    e.target === queryId("close__modal")
+  ) {
     queryId("modal_size").classList.add("d-none");
     queryId("blur__principal").classList.remove("set_blur");
   }
 });
-window.addEventListener("keydown", (e) =>{
-  if (e.key == "F5" ||(e.ctrlKey && e.key == "F5")){
-    window.location = "landing.html"
+window.addEventListener("keydown", (e) => {
+  if (e.key == "F5" || (e.ctrlKey && e.key == "F5")) {
+    window.location = "landing.html";
   }
-})
+});
