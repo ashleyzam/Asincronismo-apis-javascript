@@ -6,7 +6,7 @@
  Logré realizarlo gracias a https://mockapi.io/ que permite crear una API de 0 con los datos que más te interesen.
 Realicé este proyecto a partir de un diseño guía que nos presentó mi profesora en Ada, 
 se puede ver [¹aquí](https://www.youtube.com/watch?v=kbw9MZhuuS0&feature=youtu.be)
-* Te dejo el user test para que puedas ingresar: _ada@lovelace.com_ password: 1234 
+* Te dejo el user test para que puedas ingresar: _ada@lovelace.com_ password: _1234_ 
 
 * Los iconos que usé son de la página FontAwesome. https://fontawesome.com/
 * Las fuentes de mi página son de Google Fonts. https://fonts.google.com/
