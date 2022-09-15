@@ -123,9 +123,9 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  min-width: 250px;
+  min-width: 300px;
   width: 20%;
-  height: 600px;
+  height: 300px;
   border: 1px solid #7e33b7;
 }
 
@@ -139,6 +139,7 @@ body {
   margin: 5px 5px;
   width: 100%;
   padding: 2px 50px;
+  border-radius: 20px;
   text-align: center;
 }
 
@@ -168,7 +169,7 @@ body {
 }
 
 #log_btn {
-  background-color: #009929;
+  background-color: rgb(65, 226, 97);
   color: white;
 }
 
@@ -188,13 +189,6 @@ body {
 .text-validation {
   font-size: 0.8em;
   color: red;
-}
-
-.background-image {
-  width: 100%;
-  flex-wrap: wrap;
-  background: url("https://img.freepik.com/vector-gratis/banner-vacante-trabajo-minimo-publicacion-social-estamos-hring-fondo-lupa-garabatos_90099-909.jpg?w=900");
-  background-position: right top;
 }
 
 .search--form__section {
@@ -265,7 +259,8 @@ body {
   padding-bottom: 20px;
 }
 .flex__form #form__styles {
-  background-color: #ebebeb;
+  padding: 0 350px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -291,7 +286,7 @@ body {
   font-size: 1em;
 }
 .flex__form .edit__btnform {
-  background-color: olivedrab;
+  background-color: rgb(65, 226, 97);
   border-radius: 8px;
   margin: 5px;
   padding: 8px 30px;
@@ -303,10 +298,10 @@ body {
 }
 
 .save__btnform {
-  background-color: olivedrab;
+  background-color: rgb(65, 226, 97);
   border-radius: 8px;
   margin: 5px;
-  padding: 8px 30px;
+  padding: 8px 20px;
   border: 1px transparent;
   color: white;
   cursor: pointer;
@@ -354,8 +349,9 @@ body {
 #container__cards {
   flex-wrap: wrap;
   bottom: 0;
-  min-height: 1200px;
-  background: #ebebeb;
+  min-height: 100vh;
+  max-width: 1260px;
+  margin: 0 auto;
   padding-bottom: 4em;
   display: flex;
   justify-content: center;
@@ -373,7 +369,7 @@ body {
   margin: auto;
   border-radius: 20px;
   max-width: 300px;
-  min-width: 300px;
+  min-width: 350px;
   width: 10%;
   padding: 10px 5px;
   height: 450px;
@@ -474,7 +470,7 @@ body {
   align-items: center;
 }
 .d-flex__buttons .edit__btn {
-  background-color: olivedrab;
+  background-color: rgb(65, 226, 97);
   border-radius: 0.5em;
   margin: 5px;
   padding: 8px 30px;
@@ -771,7 +767,7 @@ a {
 
 .home_body {
   background: rgb(25, 25, 122);
-  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(6, 6, 86) 35%, rgb(34, 130, 149) 100%);
 }
 
 .why-work-with-us {

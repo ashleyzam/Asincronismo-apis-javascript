@@ -55,9 +55,9 @@
     $justifycontent: center,
     $alignitems: center
   );
-  min-width: 250px;
+  min-width: 300px;
   width: 20%;
-  height: 600px;
+  height: 300px;
   border: 1px solid $button-color;
 }
 
@@ -71,6 +71,7 @@
   margin: 5px 5px;
   width: 100%;
   padding: 2px 50px;
+  border-radius: 20px;
   text-align: center;
 }
 
@@ -101,7 +102,7 @@
 }
 
 #log_btn {
-  background-color: #009929;
+  background-color: rgb(65, 226, 97);
   color: white;
 }
 
@@ -122,13 +123,6 @@
 .text-validation {
   font-size: 0.8em;
   color: red;
-}
-
-.background-image {
-  width: 100%;
-  flex-wrap: $flex-wrap;
-  background: url("https://img.freepik.com/vector-gratis/banner-vacante-trabajo-minimo-publicacion-social-estamos-hring-fondo-lupa-garabatos_90099-909.jpg?w=900");
-  background-position: right top;
 }
 
 .search--form__section {
@@ -210,7 +204,8 @@
   padding-bottom: 20px;
 
   #form__styles {
-    background-color: #ebebeb;
+    padding: 0 350px;
+    min-height: 100vh;
     @include d-flex(
       $direction: column,
       $justifycontent: center,
@@ -241,7 +236,7 @@
   }
 
   .edit__btnform {
-    background-color: olivedrab;
+    background-color: rgb(65, 226, 97);
     border-radius: 8px;
     margin: 5px;
     padding: 8px 30px;
@@ -254,10 +249,10 @@
 }
 
 .save__btnform {
-  background-color: olivedrab;
+  background-color: rgb(65, 226, 97);
   border-radius: 8px;
   margin: 5px;
-  padding: 8px 30px;
+  padding: 8px 20px;
   border: 1px transparent;
   color: $white--color;
   cursor: $cursor;

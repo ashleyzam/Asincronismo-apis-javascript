@@ -22,7 +22,6 @@
     $justifycontent: center,
     $alignitems: center
   );
-  // height: 100px;
   font-size: 1em;
   text-align: center;
   text-transform: uppercase;
@@ -49,13 +48,9 @@
   background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(6, 6, 86) 35%,
+    rgb(34, 130, 149) 100%
   );
-  //   background-size: cover;
-  //   background-position: left center;
-  //   height: 1500px;
-  //   min-height: 500px;
 }
 
 .why-work-with-us {
